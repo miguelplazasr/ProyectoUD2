@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="container well">
+        <div class="col-lg-9">
+            <h1>Prestamo Numero: {{ entity.id }}</h1>
+            <dl>
+                <dt>Id</dt>
+                <dd>
+                    {{ entity.id }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Fecha de prestamo</dt>
+                <dd>
+                    {{ entity.fechaEntrega|date('Y-m-d H:i:s')  }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Fecha de entrega</dt>
+                <dd>
+                    {{ entity.fechaDevolucion|date('Y-m-d H:i:s')  }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Elemento</dt>
+                <dd>
+                    {{ entity.sactivo.eactivo.nombre }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Usuario</dt>
+                <dd>
+                    {{ entity.users.id }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Cantidad</dt>
+                <dd>
+                    {{ entity.cantidad }}
+                    &nbsp;
+                </dd>
+                <br>
+            </dl>
+        </div>
+        <div class="col-md-3">
+            <h2>Acciones</h2>
+            <p>
+                <a href="#" class="btn btn-sm btn-warning">
+                    Editar
+                </a>
+            </p>
+            <p>
+                {{ form_start(delete_form) }}
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este prestamo')">Eliminar</button>
+                {{ form_end(delete_form) }}
+            </p>
+            <p>
+                <a href="{{ path('ud_activos_prestamo') }}" class="btn btn-sm btn-default">
+                    Volver
+                </a>
+                <br>
+            </p>
+        </div>
+    </div>
+{% endblock %}

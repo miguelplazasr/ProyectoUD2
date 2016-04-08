@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="container well">
+        <div class="col-lg-9">
+            <h1>Prestamo Numero: {{ entity.id }}</h1>
+            <br>
+            <dl>
+                <dt>Id</dt>
+                <dd>
+                    {{ entity.id }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Fecha de entrega</dt>
+                <dd>
+                    {{ entity.fechaEntrega|date('Y-m-d H:i:s') }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Fecha de devolucion</dt>
+                <dd>
+                    {{ entity.fechaDevolucion|date('Y-m-d H:i:s') }}
+                    &nbsp;
+                </dd>
+                <br>
+            </dl>
+        </div>
+        <div class="col-md-3">
+            <h2>Acciones</h2>
+            <p>
+                {{ form_start(delete_form) }}
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Esta seguro de borrar este prestamo?')">Eliminar</button>
+                {{ form_end(delete_form) }}
+            </p>
+            <p>
+                <a href="{{ path('ud_deportes_prestamo') }}" class="btn btn-sm btn-link">
+                    Volver
+                </a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+{{ parent() }}
+<div class="main container">
+    <div class="row well">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>A&ntildeadir un salon</h1>
+            </div>
+            {{ form_start(form, { 'attr' :{ 'id' : id|default('new-form')} }) }}
+            <div class="form-group">
+                {{ form_label(form.id) }}
+                {{ form_widget(form.id, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite id'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.nombreSala) }}
+                {{ form_widget(form.nombreSala, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite un nombre'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.descripcion) }}
+                {{ form_widget(form.descripcion, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite descripcion'}}) }}
+            </div>
+            <p>{{ form_widget(form.submit, { 'label': 'Agregar Sala', 'attr' : {'class' : 'btn btn-success' }}) }}</p>
+            {{ form_end(form) }}
+            <p>
+                <a href="{{ path('ud_salones_salon') }}" class="btn btn-sm btn-link">
+                   Volver
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

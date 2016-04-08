@@ -1,0 +1,35 @@
+{% extends ('layout.html.twig') %}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="main container">
+        <div class="row well">
+            <div class="col-md-6">
+                <div class="page-header">
+                    <h1>Editar una dependencia</h1>
+                </div>
+                {{ form_start(edit_form, { 'attr' :{ 'id' : id|default('new-form')} }) }}
+                <div class="form-group">
+                    {{ form_label(edit_form.id) }}
+                    {{ form_widget(edit_form.id, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite id'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(edit_form.nombre) }}
+                    {{ form_widget(edit_form.nombre, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite nombre'}}) }}
+                </div>
+                <p>{{ form_widget(edit_form.submit, { 'label': 'Agregar Dependencia', 'attr' : {'class' : 'btn btn-success' }}) }}</p>
+                {{ form_end(edit_form) }}
+                <p>
+                    {{ form_start(delete_form) }}
+                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                    {{ form_end(delete_form) }}
+                </p>
+                <p>
+                    <a href="{{ path('ud_admin_dependencia') }}" class="btn btn-sm btn-link">
+                        Volver
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

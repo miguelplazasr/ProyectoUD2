@@ -1,0 +1,46 @@
+{% extends ('layout.html.twig') %}
+
+{% block body -%}
+    <div class="container">
+        <div class="col-md-12">
+            <div class="page-header">
+                 <h1>Listado de Seguridad Social</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Eps</th>
+                        <th>Rh</th>
+                        <th>Telefono contacto</th>
+                        <th>Nombre Usuario</th>
+                        <th>Accciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('ud_enfermeria_ssocial_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td>{{ entity.eps }}</td>
+                            <td>{{ entity.rh }}</td>
+                            <td>{{ entity.telefonoContacto }}</td>
+                            <td>{{ entity.users.nombres }} {{ entity.users.apellidos }}</td>
+                            <td class="actions">
+                                <a href="{{ path('ud_enfermeria_ssocial_show', { 'id': entity.id }) }}" class="btn btn-sm btn-info">Mostrar</a>
+                                <a href="{{ path('ud_enfermeria_ssocial_edit', { 'id': entity.id }) }}" class="btn btn-sm btn-primary">Editar</a>
+                                {{ form_start(delete_forms[entity.id]) }}
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este prestamo?')">Eliminar</button>
+                                {{ form_end(delete_forms[entity.id]) }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{{ path('ud_enfermeria_ssocial_new') }}" class="btn btn-sm btn-link">
+                Nuevo registro
+            </a>
+        </div>
+    </div>
+{% endblock %}

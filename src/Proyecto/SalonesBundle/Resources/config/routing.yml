@@ -1,0 +1,63 @@
+salones_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SalonesBundle:Default:index }
+
+#Salones
+
+ud_salones_salon:
+    path: /ud/salones/salon
+    defaults: { _controller: SalonesBundle:Salones:index }
+
+ud_salones_salon_show:
+    path: /ud/salones/salon/show/{id}
+    defaults: { _controller: SalonesBundle:Salones:show }
+
+ud_salones_salon_new:
+    path: /ud/salones/salon/new
+    defaults: { _controller: SalonesBundle:Salones:new }
+
+ud_salones_salon_create:
+    path: /ud/salones/salon/create
+    defaults: { _controller: SalonesBundle:Salones:create }
+
+ud_salones_salon_edit:
+    path: /ud/salones/salon/edit/{id}
+    defaults: { _controller: SalonesBundle:Salones:edit }
+
+ud_salones_salon_update:
+   path: /ud/salones/salon/update/{id}
+   defaults: { _controller: SalonesBundle:Salones:update }
+
+ud_salones_salon_delete:
+   path: /ud/salones/salon/delete/{id}
+   defaults: { _controller: SalonesBundle:Salones:delete }
+
+#Prestamos
+
+ud_salones_prestamo:
+    path: /ud/salones/prestamo
+    defaults: { _controller: SalonesBundle:PrestamoSalon:index }
+
+ud_salones_prestamo_show:
+    path: /ud/salones/prestamo/show/{id}
+    defaults: { _controller: SalonesBundle:PrestamoSalon:show }
+
+ud_salones_prestamo_new:
+    path: /ud/salones/prestamo/new
+    defaults: { _controller: SalonesBundle:PrestamoSalon:new }
+
+ud_salones_prestamo_create:
+    path: /ud/salones/prestamo/create
+    defaults: { _controller: SalonesBundle:PrestamoSalon:create }
+
+ud_salones_prestamo_edit:
+    path: /ud/salones/prestamo/edit/{id}
+    defaults: { _controller: SalonesBundle:PrestamoSalon:edit }
+
+ud_salones_prestamo_update:
+   path: /ud/salones/prestamo/update/{id}
+   defaults: { _controller: SalonesBundle:PrestamoSalon:update }
+
+ud_salones_prestamo_delete:
+   path: /ud/salones/salon/delete/{id}
+   defaults: { _controller: SalonesBundle:PrestamoSalon:delete }

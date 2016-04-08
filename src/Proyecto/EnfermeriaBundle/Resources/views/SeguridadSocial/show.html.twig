@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="container well">
+        <div class="col-lg-9">
+            <h1>Usuario: {{ entity.users.nombres }} {{ entity.users.apellidos }}</h1>
+            <br>
+            <dl>
+                <dt>Id</dt>
+                <dd>
+                    {{ entity.id }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>EPS</dt>
+                <dd>
+                    {{ entity.eps }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>RH</dt>
+                <dd>
+                    {{ entity.rh }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Telefono Contacto</dt>
+                <dd>
+                    {{ entity.telefonoContacto }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Nombre Usuario</dt>
+                <dd>
+                    {{ entity.users.nombres }} {{ entity.users.apellidos }}
+                    &nbsp;
+                </dd>
+                <br>
+            </dl>
+        </div>
+        <div class="col-md-3">
+            <h1>Acciones</h1>
+            <p>
+                <a href="{{ path('ud_enfermeria_ssocial') }}" class="btn btn-sm btn-default">
+                    Volver
+                </a>
+            </p>
+            <p>
+                <a href="{{ path('ud_enfermeria_ssocial_edit', {'id': entity.id }) }}" class="btn btn-sm btn-warning">
+                    Editar
+                </a>
+            </p>
+            <p>
+                {{ form_start(delete_form) }}
+                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                {{ form_end(delete_form) }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

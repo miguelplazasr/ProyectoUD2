@@ -1,0 +1,91 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+<div class="main container">
+    <div class="row well">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>A&ntildeadir un prestamo</h1>
+            </div>
+            <div class="search">
+                <form id="search-form">
+                    <label for="searchbox">Busqueda</label>
+                    <input id="searchbox" type="text" placeholder="Ingrese el id del usuario" class="form-control" required/>
+                    <br>
+                    <input type="submit" value="{{ 'Buscar Usuario' }}" class="btn btn-default btn-search" />
+                </form>
+            </div>
+            <br>
+            <div id="elementos">
+            {{ form_start(form) }}
+                <label for="fecha">Fecha</label>
+                <input type="text" class="date form-control" placeholder="asigne una fecha" name="fecha" id="fecha">
+                <br>
+                <div class="form-group">
+                    {{ form_label(form.horario) }}
+                    {{ form_widget(form.horario, { 'attr' : {'class' : 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.observaciones) }}
+                    {{ form_widget(form.observaciones, { 'attr' : {'class' : 'form-control', 'placeholder': 'Digite la observacion'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sala) }}
+                    {{ form_widget(form.sala, { 'attr' : {'class' : 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.users) }}
+                    {{ form_widget(form.users, { 'attr' : {'class' : 'form-control'}}) }}
+                </div>
+                <p>{{ form_widget(form.submit, { 'label': 'Agregar prestamo', 'attr' : {'class' : 'btn btn-success' }}) }}</p>
+            {{ form_end(form) }}
+            </div>
+            <p>
+                <a href="{{ path('ud_salones_prestamo') }}" class="btn btn-sm btn-link">
+                   volver
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('public/css/jquery-ui.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/salones/js/searchuser.js') }}"></script>
+    <script src="{{ asset('public/js/jquery-1.10.2.js') }}"></script>
+    <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
+    <script>
+        $(function(){
+            $.datepicker.regional['es'] = {
+                closeText: 'Cerrar',
+                prevText: '<Ant',
+                nextText: 'Sig>',
+                currentText: 'Hoy',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+                dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+                dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sa'],
+                weekHeader: 'Sm',
+                dateFormat: 'yy-mm-dd',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+            $.datepicker.setDefaults($.datepicker.regional["es"]);
+            $(".date").datepicker({
+                onSelect: function(dateText, inst){
+                    var date = $(this).val();
+                    //alert(date);
+                }
+            })
+        });
+    </script>
+{% endblock %}

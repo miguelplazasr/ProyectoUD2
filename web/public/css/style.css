@@ -1,0 +1,9 @@
+form#searchxml-form {
+    position: relative;
+    right: -130px;
+    top: -54px;
+}
+
+td.actions {
+    display: inline-flex;
+}

@@ -1,0 +1,88 @@
+activos_homepage:
+    path:     /hellok/{name}
+    defaults: { _controller: ActivosBundle:Default:index }
+
+#elementos
+
+ud_activos_elementos:
+    path:   /ud/activos/elementos
+    defaults: { _controller: ActivosBundle:ElementosActivos:index }
+
+ud_activos_elementos_show:
+    path: /ud/activos/elementos/show/{id}
+    defaults: { _controller: ActivosBundle:ElementosActivos:show }
+
+ud_activos_elementos_new:
+    path: /ud/activos/elementos/new
+    defaults: { _controller: ActivosBundle:ElementosActivos:new }
+
+ud_activos_elementos_create:
+    path: /ud/activos/elementos/create
+    defaults: { _controller: ActivosBundle:ElementosActivos:create }
+
+ud_activos_elementos_edit:
+    path: /ud/activos/elementos/edit/{id}
+    defaults: { _controller: ActivosBundle:ElementosActivos:edit }
+
+ud_activos_elementos_update:
+    path: /ud/activos/elementos/update/{id}
+    defaults: { _controller: ActivosBundle:ElementosActivos:update }
+
+ud_activos_elementos_delete:
+    path: /ud/activos/elementos/updated/{id}
+    defaults: { _controller: ActivosBundle:ElementosActivos:delete }
+
+#stock
+ud_activos_stock:
+    path:   /ud/activos/stock
+    defaults: { _controller: ActivosBundle:StockActivo:index }
+
+ud_activos_stock_show:
+    path: /ud/activos/stock/show/{id}
+    defaults: { _controller: ActivosBundle:StockActivo:show }
+
+ud_activos_stock_new:
+    path: /ud/activos/stock/new
+    defaults: { _controller: ActivosBundle:StockActivo:new }
+
+ud_activos_stock_create:
+    path: /ud/activos/stock/create
+    defaults: { _controller: ActivosBundle:StockActivo:create }
+
+ud_activos_stock_edit:
+    path: /ud/activos/stock/edit/{id}
+    defaults: { _controller: ActivosBundle:StockActivo:edit }
+
+ud_activos_stock_update:
+    path: /ud/activos/stock/update/{id}
+    defaults: { _controller: ActivosBundle:StockActivo:update }
+
+ud_activos_stock_delete:
+    path: /ud/activos/stock/updated/{id}
+    defaults: { _controller: ActivosBundle:StockActivo:delete }
+
+#prestamos
+ud_activos_prestamo:
+    path:   /ud/activos/prestamo
+    defaults: { _controller: ActivosBundle:PrestamoActivo:index }
+
+ud_activos_prestamo_show:
+    path: /ud/activos/prestamo/show/{id}
+    defaults: { _controller: ActivosBundle:PrestamoActivo:show }
+
+ud_activos_prestamo_new:
+    path: /ud/activos/prestamo/new
+    defaults: { _controller: ActivosBundle:PrestamoActivo:new }
+
+ud_activos_prestamo_create:
+    path: /ud/activos/prestamo/create
+    defaults: { _controller: ActivosBundle:PrestamoActivo:create }
+
+ud_activos_prestamo_delete:
+    path: /ud/activos/prestamo/delete/{id}
+    defaults: { _controller: ActivosBundle:PrestamoActivo:delete }
+
+
+
+
+
