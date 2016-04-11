@@ -7,3 +7,82 @@ form#searchxml-form {
 td.actions {
     display: inline-flex;
 }
+
+div#carnet {
+    max-width: 377px;
+    height: 242px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 7px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+div#carnet h6 {
+    text-align: center;
+    line-height: 5px;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.alcaldia {
+    margin: 0 auto;
+    text-align: center;
+    width: 183px;
+    background: red;
+}
+
+.alcaldia h6 {
+    font-size: 8px;
+    text-align: center;
+    padding: 2px;
+    width: 152px;
+    margin: 0 auto;
+}
+
+.titulo {
+    padding-top: 10px;
+}
+
+.datos input[type="text"] {
+    height: 20px;
+    border: none;
+    background: transparent;
+}
+
+.iden {
+    display: inline-flex;
+}
+
+.datos h5 {
+    font-weight: bolder;
+    line-height: 5px;
+    font-family: arial;
+}
+
+h5#correo {
+    font-size: 12px;
+}
+
+.datos {
+    margin-top: 8px;
+}
+
+.data-center {
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+h5#dependencia {
+    font-size: 11px;
+}
+
+.foto {
+    padding-top: 10px;
+}
+
+input#print {
+    position: relative;
+    left: 80px;
+}

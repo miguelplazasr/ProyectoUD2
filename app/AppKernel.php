@@ -19,11 +19,13 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\ElasticaBundle\FOSElasticaBundle(),
+            new ADesigns\CalendarBundle\ADesignsCalendarBundle(),
             new Proyecto\AdminBundle\AdminBundle(),
             new Proyecto\DeportesBundle\DeportesBundle(),
             new Proyecto\ActivosBundle\ActivosBundle(),
             new Proyecto\EnfermeriaBundle\EnfermeriaBundle(),
             new Proyecto\SalonesBundle\SalonesBundle(),
+            new Proyecto\CarnetBundle\CarnetBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

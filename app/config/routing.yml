@@ -1,3 +1,7 @@
+carnet:
+    resource: "@CarnetBundle/Resources/config/routing.yml"
+    prefix:   /
+
 salones:
     resource: "@SalonesBundle/Resources/config/routing.yml"
     prefix:   /
@@ -24,6 +28,9 @@ app:
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+adesigns_calendar:
+  resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
 
 ud_enfermeria_reporte_search:
     path: /ud/enfermeria/reporte/search/{id}
@@ -60,3 +67,17 @@ ud_salones_prestamo_search:
     defaults: { _controller: "SalonesBundle:PrestamoSalon:search" }
     options:
             expose: true
+
+ud_carnet_search:
+    path: /ud/carnetizacion/search/{id}
+    defaults: { _controller: "CarnetBundle:Default:search" }
+    options:
+            expose: true
+
+ud_carnet_createxml:
+    path: /ud/carnetizacion/createxml/{id}/{role}
+    defaults: { _controller: "CarnetBundle:Default:xml" }
+    options:
+            expose: true
+
+

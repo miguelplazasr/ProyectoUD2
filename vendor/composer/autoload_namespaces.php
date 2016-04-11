@@ -20,4 +20,5 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
+    'ADesigns\\CalendarBundle' => array($vendorDir . '/adesigns/calendar-bundle'),
 );

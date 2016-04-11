@@ -2,11 +2,10 @@ $(document).ready(function(){
 //Read nodes
     $('#searchxml-form').submit(function(event) {
         event.preventDefault();
-        $.post("http://localhost/soloip.php", function(data){
+        $.post("http://192.168.0.16/soloip.php", function(data){
             var ip=data;
             alert(ip);
-
-            $.post("http://localhost/proyectoud/web/bundles/enfermeria/js/acceso_"+ip+".xml", function (xml) {
+            $.post("http://192.168.0.16/ProyectoUD2/web/xmlusers/documento/acceso_"+ip+".xml", function (xml) {
                 $(xml).find("usuario").each(function () {
                     var $id = $(this).find('n_identificacion').text();
                     alert($id);
@@ -41,6 +40,8 @@ $(document).ready(function(){
                         $('.btn-search').hide();
                     });
                 });
+            }).fail(function(){
+                alert('No se encuentra el archivo acceso_'+ip+'.xml');
             });
         });
     });

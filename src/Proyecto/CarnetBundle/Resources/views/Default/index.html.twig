@@ -1,0 +1,70 @@
+
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="container">
+        <div class="row well">
+            <div class="page-header">
+                <h1>Servicio de Carnetizacion</h1>
+            </div>
+            <div class="col-md-6">
+                <div class="search">
+                    <form id="search-form">
+                        <label for="searchbox">Busqueda</label>
+                        <input id="searchbox" type="text" placeholder="Ingrese el id del usuario" class="form-control" required/>
+                        <br>
+                        <input type="submit" value="{{ 'Buscar Usuario' }}" class="btn btn-default btn-search" id="btn-search"/>
+                    </form>
+                </div>
+                <br>
+                <div class="xml">
+                    <form id="xml-form">
+                        <label for="idxml">Documento</label>
+                        <input id="idxml" type="text" placeholder="Ingrese el id del usuario" class="form-control" required/>
+                        <br>
+                        <label for="rol">Rol</label>
+                        <input id="rol" type="text" placeholder="Ingrese el id del usuario" class="form-control" value="ROLE_ADMIN" readonly="readonly" required/>
+                        <br>
+                        <input type="submit" value="{{ 'Enviar datos' }}" class="btn btn-default btn-xml" id="btn-xml"/>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 car">
+               <div id="carnet">
+                   <div class="titulo">
+                       <h6>UNIVERSIDAD DISTRITAL</h6>
+                       <h6>FRANCISCO JOSE DE CALDAS</h6>
+                       <div class="alcaldia">
+                           <h6>ALCALDIA MAYOR DE BOGOTA D.C.</h6>
+                       </div>
+                   </div>
+                   <div class="col-md-8 datos">
+                       <h5 id="nombres">XXXXXXXXXXXXXX</h5>
+                       <h5 id="apellidos">XXXXXXXXXXXXXX</h5>
+                       <div class="iden"> <h5>Identificacion: </h5> <h5 id="iden">XXXXXXXXXX</h5></div>
+                       <div class="iden"> <h5>Codigo: </h5> <h5 id="cod">XXXXXXXXX</h5></div>
+                       <h5 id="correo">XXXXX@XXXXXX.XXXX.XXX.XX</h5>
+                       <div class="data-center">
+                           <h5 id="dependencia">XXXXXXXXXXXXXXXXXXXXXXX</h5>
+                           <h5 id="rol">XXXXXXXXXXXXX</h5>
+                       </div>
+                   </div>
+                   <div class="col-md-2 foto">
+                       <img src="{{ asset('uploads/documents/usuarios/0.jpeg') }}" id="imgcarnet" width="95px" height="150px">
+                   </div>
+               </div>
+                <br>
+                    <input type="submit" value="imprimir" class="btn btn-sm btn-info" id="print">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/carnet/searchuser.js') }}"></script>
+    <script src="{{ asset('bundles/carnet/imprimir.js') }}"></script>
+    <script src="{{ asset('bundles/carnet/xmltag.js') }}"></script>
+{% endblock %}
+

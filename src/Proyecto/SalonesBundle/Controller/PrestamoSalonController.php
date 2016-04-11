@@ -387,5 +387,10 @@ class PrestamoSalonController extends Controller
 
     }
 
+    public function calendarioAction()
+    {
+        return $this->render('SalonesBundle:PrestamoSalon/Calendario:calendario.html.twig');
+    }
+
 
 }

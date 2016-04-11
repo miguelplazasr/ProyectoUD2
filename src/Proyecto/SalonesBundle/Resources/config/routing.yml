@@ -59,5 +59,9 @@ ud_salones_prestamo_update:
    defaults: { _controller: SalonesBundle:PrestamoSalon:update }
 
 ud_salones_prestamo_delete:
-   path: /ud/salones/salon/delete/{id}
+   path: /ud/salones/prestamo/delete/{id}
    defaults: { _controller: SalonesBundle:PrestamoSalon:delete }
+
+ud_salones_prestamo_calendario:
+  path: /ud/salones/calendario
+  defaults: { _controller: SalonesBundle:PrestamoSalon:calendario }
