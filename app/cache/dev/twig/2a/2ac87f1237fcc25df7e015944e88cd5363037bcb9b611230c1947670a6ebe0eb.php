@@ -15,8 +15,8 @@ class __TwigTemplate_0db40a2985f84417bb598552f896d38903b5f453117445b89e888adc5d7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a6fc3886e089f9a095cadaf57c4219ec19bd099683e1ff6c25d4509db407375b = $this->env->getExtension("native_profiler");
-        $__internal_a6fc3886e089f9a095cadaf57c4219ec19bd099683e1ff6c25d4509db407375b->enter($__internal_a6fc3886e089f9a095cadaf57c4219ec19bd099683e1ff6c25d4509db407375b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:header.html.twig"));
+        $__internal_ab0bd10a91085a70d850fd3559d23e7ba5a4572f525fd3cca379be1d44d23624 = $this->env->getExtension("native_profiler");
+        $__internal_ab0bd10a91085a70d850fd3559d23e7ba5a4572f525fd3cca379be1d44d23624->enter($__internal_ab0bd10a91085a70d850fd3559d23e7ba5a4572f525fd3cca379be1d44d23624_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:header.html.twig"));
 
         // line 1
         echo "<div id=\"header\" class=\"clear-fix\">
@@ -46,7 +46,7 @@ class __TwigTemplate_0db40a2985f84417bb598552f896d38903b5f453117445b89e888adc5d7
 </div>
 ";
         
-        $__internal_a6fc3886e089f9a095cadaf57c4219ec19bd099683e1ff6c25d4509db407375b->leave($__internal_a6fc3886e089f9a095cadaf57c4219ec19bd099683e1ff6c25d4509db407375b_prof);
+        $__internal_ab0bd10a91085a70d850fd3559d23e7ba5a4572f525fd3cca379be1d44d23624->leave($__internal_ab0bd10a91085a70d850fd3559d23e7ba5a4572f525fd3cca379be1d44d23624_prof);
 
     }
 

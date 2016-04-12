@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+<div class="main container">
+    <div class="row well">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>A&ntildeadir un Invitado</h1>
+            </div>
+
+            {{ form_start(form, { 'attr' :{ 'id' : id|default('new-form')} }) }}
+            <div class="form-group">
+                {{ form_label(form.id) }}
+                {{ form_widget(form.id, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite id'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.nombres) }}
+                {{ form_widget(form.nombres, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite nombres'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.apellidos) }}
+                {{ form_widget(form.apellidos, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite apellidos'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.file) }}
+                {{ form_widget(form.file) }}
+            </div>
+
+            <p>{{ form_widget(form.submit, { 'label': 'Agregar invitado', 'attr' : {'class' : 'btn btn-success new-inv' }}) }}</p>
+            {{ form_end(form) }}
+            <div class="xml">
+                <form id="xmlinv">
+                    <input type="submit" class="btn btn-primary" value="Grabar Datos" id="xmlbutton">
+                </form>
+            </div>
+
+                <a href="{{ path('ud_seguridad_invitados') }}" class="btn btn-sm btn-link">
+                   Volver
+                </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/seguridad/js/xmlinv.js') }}"></script>
+{% endblock %}

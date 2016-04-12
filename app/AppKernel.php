@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Proyecto\EnfermeriaBundle\EnfermeriaBundle(),
             new Proyecto\SalonesBundle\SalonesBundle(),
             new Proyecto\CarnetBundle\CarnetBundle(),
+            new Proyecto\SeguridadBundle\SeguridadBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig'%}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="main container">
+         <div class="row well">
+            <div class="col-md-6">
+                <div class="page-header">
+                    <h1>Comprobar Tag</h1>
+                </div>
+                <div class="search">
+                    <form id="search-form">
+                        <label for="searchbox">Busqueda</label>
+                        <input id="searchbox" type="text" placeholder="Ingrese el id del usuario" class="form-control" required/>
+                        <br>
+                        <input type="submit" value="{{ 'Buscar Tag' }}" class="btn btn-default btn-search" />
+                    </form>
+                </div>
+                <div class="data">
+                    <div class="page-header">
+                        <h1>Datos</h1>
+                    </div>
+                    <label for="nombre">Nombres</label>
+                    <input id="nombres" type="text" placeholder="Nombres" class="form-control" readonly="readonly" required/>
+                    <br>
+                    <label for="apellidos">Apellidos</label>
+                    <input id="apellidos" type="text" placeholder="Apellidos" class="form-control" readonly="readonly" required/>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="page-header imagen">
+                    <h1>Imagen</h1>
+                </div>
+                <div class="imagen-inv">
+                    <p>
+                        <img src="{{ asset('uploads/documents/invitados/0.jpeg') }}" width="220px" height="250px" id="img-inv">
+                    </p>
+                </div>
+            </div>
+         </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/seguridad/js/searchinv.js') }}"></script>
+{% endblock %}

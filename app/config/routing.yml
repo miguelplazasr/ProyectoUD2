@@ -1,3 +1,7 @@
+seguridad:
+    resource: "@SeguridadBundle/Resources/config/routing.yml"
+    prefix:   /
+
 carnet:
     resource: "@CarnetBundle/Resources/config/routing.yml"
     prefix:   /
@@ -77,6 +81,18 @@ ud_carnet_search:
 ud_carnet_createxml:
     path: /ud/carnetizacion/createxml/{id}/{role}
     defaults: { _controller: "CarnetBundle:Default:xml" }
+    options:
+            expose: true
+
+ud_seguridad_invitado_xml:
+    path: /ud/seguridad/invitados/xmlinv/{id}
+    defaults: { _controller: "SeguridadBundle:Invitados:xmlInv" }
+    options:
+            expose: true
+
+ud_seguridad_invitado_c:
+    path: /ud/seguridad/invitados/search/{id}
+    defaults: { _controller: "SeguridadBundle:Invitados:search" }
     options:
             expose: true
 

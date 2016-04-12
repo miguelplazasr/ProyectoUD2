@@ -127,6 +127,62 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // seguridad_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'seguridad_homepage')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/ud')) {
+            if (0 === strpos($pathinfo, '/ud/seguridad/invitados')) {
+                // ud_seguridad_invitados
+                if ($pathinfo === '/ud/seguridad/invitados') {
+                    return array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::indexAction',  '_route' => 'ud_seguridad_invitados',);
+                }
+
+                // ud_seguridad_invitados_show
+                if (0 === strpos($pathinfo, '/ud/seguridad/invitados/show') && preg_match('#^/ud/seguridad/invitados/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_seguridad_invitados_show')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::showAction',));
+                }
+
+                // ud_seguridad_invitados_new
+                if ($pathinfo === '/ud/seguridad/invitados/new') {
+                    return array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::newAction',  '_route' => 'ud_seguridad_invitados_new',);
+                }
+
+                // ud_seguridad_invitados_create
+                if ($pathinfo === '/ud/seguridad/invitados/create') {
+                    return array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::createAction',  '_route' => 'ud_seguridad_invitados_create',);
+                }
+
+                // ud_seguridad_invitados_edit
+                if (0 === strpos($pathinfo, '/ud/seguridad/invitados/edit') && preg_match('#^/ud/seguridad/invitados/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_seguridad_invitados_edit')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::editAction',));
+                }
+
+                // ud_seguridad_invitados_update
+                if (0 === strpos($pathinfo, '/ud/seguridad/invitados/update') && preg_match('#^/ud/seguridad/invitados/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_seguridad_invitados_update')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::updateAction',));
+                }
+
+                // ud_seguridad_invitados_delete
+                if (0 === strpos($pathinfo, '/ud/seguridad/invitados/delete') && preg_match('#^/ud/seguridad/invitados/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_seguridad_invitados_delete')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::deleteAction',));
+                }
+
+                // ud_seguridad_invitados_find
+                if ($pathinfo === '/ud/seguridad/invitados/find') {
+                    return array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::findAction',  '_route' => 'ud_seguridad_invitados_find',);
+                }
+
+            }
+
+            // carnet_homepage
+            if ($pathinfo === '/ud/carnetizacion') {
+                return array (  '_controller' => 'Proyecto\\CarnetBundle\\Controller\\DefaultController::indexAction',  '_route' => 'carnet_homepage',);
+            }
+
+        }
+
         // salones_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'salones_homepage')), array (  '_controller' => 'Proyecto\\SalonesBundle\\Controller\\DefaultController::indexAction',));
@@ -202,11 +258,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_salones_prestamo_update')), array (  '_controller' => 'Proyecto\\SalonesBundle\\Controller\\PrestamoSalonController::updateAction',));
                 }
 
+                // ud_salones_prestamo_delete
+                if (0 === strpos($pathinfo, '/ud/salones/prestamo/delete') && preg_match('#^/ud/salones/prestamo/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_salones_prestamo_delete')), array (  '_controller' => 'Proyecto\\SalonesBundle\\Controller\\PrestamoSalonController::deleteAction',));
+                }
+
             }
 
-            // ud_salones_prestamo_delete
-            if (0 === strpos($pathinfo, '/ud/salones/salon/delete') && preg_match('#^/ud/salones/salon/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_salones_prestamo_delete')), array (  '_controller' => 'Proyecto\\SalonesBundle\\Controller\\PrestamoSalonController::deleteAction',));
+            // ud_salones_prestamo_calendario
+            if ($pathinfo === '/ud/salones/calendario') {
+                return array (  '_controller' => 'Proyecto\\SalonesBundle\\Controller\\PrestamoSalonController::calendarioAction',  '_route' => 'ud_salones_prestamo_calendario',);
             }
 
         }
@@ -646,6 +707,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_js_routing_js')), array (  '_controller' => 'fos_js_routing.controller:indexAction',  '_format' => 'js',));
         }
 
+        // fullcalendar_loader
+        if ($pathinfo === '/fc-load-events') {
+            return array (  '_controller' => 'ADesigns\\CalendarBundle\\Controller\\CalendarController::loadCalendarAction',  '_route' => 'fullcalendar_loader',);
+        }
+
         if (0 === strpos($pathinfo, '/ud')) {
             // ud_enfermeria_reporte_search
             if (0 === strpos($pathinfo, '/ud/enfermeria/reporte/search') && preg_match('#^/ud/enfermeria/reporte/search/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
@@ -681,6 +747,32 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // ud_salones_prestamo_search
             if (0 === strpos($pathinfo, '/ud/salones/prestamo/search') && preg_match('#^/ud/salones/prestamo/search/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_salones_prestamo_search')), array (  '_controller' => 'Proyecto\\SalonesBundle\\Controller\\PrestamoSalonController::searchAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/ud/carnetizacion')) {
+                // ud_carnet_search
+                if (0 === strpos($pathinfo, '/ud/carnetizacion/search') && preg_match('#^/ud/carnetizacion/search/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_carnet_search')), array (  '_controller' => 'Proyecto\\CarnetBundle\\Controller\\DefaultController::searchAction',));
+                }
+
+                // ud_carnet_createxml
+                if (0 === strpos($pathinfo, '/ud/carnetizacion/createxml') && preg_match('#^/ud/carnetizacion/createxml/(?P<id>[^/]++)/(?P<role>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_carnet_createxml')), array (  '_controller' => 'Proyecto\\CarnetBundle\\Controller\\DefaultController::xmlAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/ud/seguridad/invitados')) {
+                // ud_seguridad_invitado_xml
+                if (0 === strpos($pathinfo, '/ud/seguridad/invitados/xmlinv') && preg_match('#^/ud/seguridad/invitados/xmlinv/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_seguridad_invitado_xml')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::xmlInvAction',));
+                }
+
+                // ud_seguridad_invitado_c
+                if (0 === strpos($pathinfo, '/ud/seguridad/invitados/search') && preg_match('#^/ud/seguridad/invitados/search/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_seguridad_invitado_c')), array (  '_controller' => 'Proyecto\\SeguridadBundle\\Controller\\InvitadosController::searchAction',));
+                }
+
             }
 
         }

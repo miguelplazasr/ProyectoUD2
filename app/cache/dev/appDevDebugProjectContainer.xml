@@ -19,11 +19,14 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</parameter>
       <parameter key="FOSElasticaBundle">FOS\ElasticaBundle\FOSElasticaBundle</parameter>
+      <parameter key="ADesignsCalendarBundle">ADesigns\CalendarBundle\ADesignsCalendarBundle</parameter>
       <parameter key="AdminBundle">Proyecto\AdminBundle\AdminBundle</parameter>
       <parameter key="DeportesBundle">Proyecto\DeportesBundle\DeportesBundle</parameter>
       <parameter key="ActivosBundle">Proyecto\ActivosBundle\ActivosBundle</parameter>
       <parameter key="EnfermeriaBundle">Proyecto\EnfermeriaBundle\EnfermeriaBundle</parameter>
       <parameter key="SalonesBundle">Proyecto\SalonesBundle\SalonesBundle</parameter>
+      <parameter key="CarnetBundle">Proyecto\CarnetBundle\CarnetBundle</parameter>
+      <parameter key="SeguridadBundle">Proyecto\SeguridadBundle\SeguridadBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -579,6 +582,8 @@
     <parameter key="fos_elastica.listener.prototype.orm.class">FOS\ElasticaBundle\Doctrine\Listener</parameter>
     <parameter key="fos_elastica.elastica_to_model_transformer.prototype.orm.class">FOS\ElasticaBundle\Doctrine\ORM\ElasticaToModelTransformer</parameter>
     <parameter key="fos_elastica.manager.orm.class">FOS\ElasticaBundle\Doctrine\RepositoryManager</parameter>
+    <parameter key="fullcalendar.event.class">ADesigns\CalendarBundle\Entity\EventEntity</parameter>
+    <parameter key="fullcalendar.loader.event">calendar.load_events</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1782,7 +1787,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57053845dde6e6.39377357</argument>
+            <argument>570c3d68effca1.79604457</argument>
           </service>
         </argument>
       </argument>
@@ -1905,7 +1910,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57053845dde6e6.39377357</argument>
+            <argument>570c3d68effca1.79604457</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2422,11 +2427,13 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
+              <argument key="ADesignsCalendarBundle">ADesigns\CalendarBundle\Entity</argument>
               <argument key="AdminBundle">Proyecto\AdminBundle\Entity</argument>
               <argument key="DeportesBundle">Proyecto\DeportesBundle\Entity</argument>
               <argument key="ActivosBundle">Proyecto\ActivosBundle\Entity</argument>
               <argument key="EnfermeriaBundle">Proyecto\EnfermeriaBundle\Entity</argument>
               <argument key="SalonesBundle">Proyecto\SalonesBundle\Entity</argument>
+              <argument key="SeguridadBundle">Proyecto\SeguridadBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2446,11 +2453,30 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>ADesigns\CalendarBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2461,11 +2487,13 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2476,11 +2504,13 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2491,11 +2521,13 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2506,15 +2538,34 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
                         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Proyecto\SalonesBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\DeportesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\ActivosBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\EnfermeriaBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Proyecto\SeguridadBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2617,11 +2668,14 @@
         <argument key="AppBundle">AppBundle\AppBundle</argument>
         <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
         <argument key="FOSElasticaBundle">FOS\ElasticaBundle\FOSElasticaBundle</argument>
+        <argument key="ADesignsCalendarBundle">ADesigns\CalendarBundle\ADesignsCalendarBundle</argument>
         <argument key="AdminBundle">Proyecto\AdminBundle\AdminBundle</argument>
         <argument key="DeportesBundle">Proyecto\DeportesBundle\DeportesBundle</argument>
         <argument key="ActivosBundle">Proyecto\ActivosBundle\ActivosBundle</argument>
         <argument key="EnfermeriaBundle">Proyecto\EnfermeriaBundle\EnfermeriaBundle</argument>
         <argument key="SalonesBundle">Proyecto\SalonesBundle\SalonesBundle</argument>
+        <argument key="CarnetBundle">Proyecto\CarnetBundle\CarnetBundle</argument>
+        <argument key="SeguridadBundle">Proyecto\SeguridadBundle\SeguridadBundle</argument>
         <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
         <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
         <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
@@ -3208,6 +3262,10 @@
         <argument>FOSElastica</argument>
       </call>
       <call method="addPath">
+        <argument>C:\xampp\htdocs\ProyectoUD2\vendor\adesigns\calendar-bundle\ADesigns\CalendarBundle/Resources/views</argument>
+        <argument>ADesignsCalendar</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\AdminBundle/Resources/views</argument>
         <argument>Admin</argument>
       </call>
@@ -3226,6 +3284,14 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SalonesBundle/Resources/views</argument>
         <argument>Salones</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\CarnetBundle/Resources/views</argument>
+        <argument>Carnet</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\ProyectoUD2\src\Proyecto\SeguridadBundle/Resources/views</argument>
+        <argument>Seguridad</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\ProyectoUD2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

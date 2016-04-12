@@ -86,3 +86,7 @@ input#print {
     position: relative;
     left: 80px;
 }
+
+.imagen-inv {
+    text-align: center;
+}

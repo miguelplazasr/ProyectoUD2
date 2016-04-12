@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+<div class="container well">
+    <div class="col-lg-9">
+        <h1>Invitado: {{ entity.nombres }} {{ entity.apellidos }}</h1>
+        <br>
+        <dl>
+            <dt>Id</dt>
+            <dd>
+                {{ entity.id }}
+                &nbsp;
+            </dd>
+            <br>
+            <dt>Nombres</dt>
+            <dd>
+                {{ entity.nombres }}
+                &nbsp;
+            </dd>
+            <br>
+            <dt>Apellidos</dt>
+            <dd>
+                {{ entity.apellidos }}
+                &nbsp;
+            </dd>
+            <br>
+        </dl>
+        </div>
+    <div class="col-md-3">
+        <h1>Imagen</h1>
+        <p>
+            <img src="{{ asset(entity.webPath) }}" width="113px" height="151px" border="0"/>
+        </p>
+        <h1>Acciones</h1>
+
+            <p>
+                <a href="{{ path('ud_seguridad_invitados') }}" class="btn btn-sm btn-default">
+                    Volver
+                </a>
+            </p>
+            <p>
+                <a href="{{ path('ud_seguridad_invitados_edit', { 'id': entity.id }) }}" class="btn btn-sm btn-warning">
+                    Editar
+                </a>
+            </p>
+            <p>
+                {{ form_start(delete_form) }}
+                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                {{ form_end(delete_form) }}
+            </p>
+    </div>
+    </div>
+{% endblock %}

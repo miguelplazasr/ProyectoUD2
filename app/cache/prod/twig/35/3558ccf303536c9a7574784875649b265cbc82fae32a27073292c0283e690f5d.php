@@ -31,18 +31,18 @@ class __TwigTemplate_e576b08724dd220e127c69059eac9a03cd49d2abbd18212879799069be5
     ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 11
         echo "    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
 </head>
 <body>
 ";
-        // line 13
-        $this->displayBlock('body', $context, $blocks);
         // line 14
+        $this->displayBlock('body', $context, $blocks);
+        // line 15
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 20
+        // line 25
         echo "</body>
 </html>";
     }
@@ -64,31 +64,51 @@ class __TwigTemplate_e576b08724dd220e127c69059eac9a03cd49d2abbd18212879799069be5
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/css/style.css"), "html", null, true);
         echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/adesignscalendar/css/fullcalendar/fullcalendar.css"), "html", null, true);
+        echo "\" />
     ";
     }
 
-    // line 13
+    // line 14
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 14
+    // line 15
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 15
+        // line 16
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/js/jquery-1.12.0.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
+    <script type=\"text/javascript\" src=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/adesignscalendar/js/jquery/jquery-1.8.2.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" src=\"";
+        // line 19
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" src=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/adesignscalendar/js/calendar-settings.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" src=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/js/html2canvas.js"), "html", null, true);
+        echo "\"></script>
     <script src=\"";
-        // line 17
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/fosjsrouting/js/router.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 18
+        // line 23
         echo $this->env->getExtension('routing')->getPath("fos_js_routing_js", array("callback" => "fos.Router.setData"));
         echo "\"></script>
 ";
@@ -106,7 +126,7 @@ class __TwigTemplate_e576b08724dd220e127c69059eac9a03cd49d2abbd18212879799069be5
 
     public function getDebugInfo()
     {
-        return array (  92 => 18,  88 => 17,  84 => 16,  79 => 15,  76 => 14,  71 => 13,  65 => 8,  60 => 7,  57 => 6,  51 => 5,  46 => 20,  44 => 14,  42 => 13,  35 => 10,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  112 => 23,  108 => 22,  104 => 21,  100 => 20,  96 => 19,  92 => 18,  88 => 17,  83 => 16,  80 => 15,  75 => 14,  69 => 9,  65 => 8,  60 => 7,  57 => 6,  51 => 5,  46 => 25,  44 => 15,  42 => 14,  35 => 11,  33 => 6,  29 => 5,  23 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -117,6 +137,7 @@ class __TwigTemplate_e576b08724dd220e127c69059eac9a03cd49d2abbd18212879799069be5
 /*     {% block stylesheets %}*/
 /*         <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}">*/
 /*         <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">*/
+/*         <link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}" />*/
 /*     {% endblock %}*/
 /*     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />*/
 /* </head>*/
@@ -125,6 +146,10 @@ class __TwigTemplate_e576b08724dd220e127c69059eac9a03cd49d2abbd18212879799069be5
 /* {% block javascripts %}*/
 /*     <script src="{{ asset('public/js/jquery-1.12.0.min.js') }}"></script>*/
 /*     <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>*/
+/*     <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/jquery/jquery-1.8.2.min.js') }}"></script>*/
+/*     <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js') }}"></script>*/
+/*     <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/calendar-settings.js') }}"></script>*/
+/*     <script type="text/javascript" src="{{ asset('public/js/html2canvas.js') }}"></script>*/
 /*     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>*/
 /*     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>*/
 /* {% endblock %}*/

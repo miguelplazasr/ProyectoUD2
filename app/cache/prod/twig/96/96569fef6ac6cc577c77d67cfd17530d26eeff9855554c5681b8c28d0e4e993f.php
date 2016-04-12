@@ -43,7 +43,10 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : null), 'form_start', array("attr" => array("id" => ((array_key_exists("id", $context)) ? (_twig_default_filter((isset($context["id"]) ? $context["id"] : null), "new-form")) : ("new-form")))));
         echo "
                 <label for=\"fecha\">Fecha</label>
-                <input type=\"text\" class=\"date form-control\" placeholder=\"asigne una fecha\" name=\"fecha\" id=\"fecha\">
+                <input type=\"text\" class=\"date form-control\" placeholder=\"asigne una fecha\" name=\"fecha\" id=\"fecha\" value=\"";
+        // line 13
+        echo twig_escape_filter($this->env, (isset($context["dia"]) ? $context["dia"] : null), "html", null, true);
+        echo "\">
                 <br>
                 <div class=\"form-group\">
                     ";
@@ -191,7 +194,7 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
 
     public function getDebugInfo()
     {
-        return array (  149 => 57,  145 => 56,  140 => 55,  137 => 54,  131 => 51,  126 => 50,  123 => 49,  111 => 40,  105 => 37,  100 => 35,  95 => 33,  91 => 32,  85 => 29,  81 => 28,  75 => 25,  71 => 24,  65 => 21,  61 => 20,  55 => 17,  51 => 16,  43 => 11,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  152 => 57,  148 => 56,  143 => 55,  140 => 54,  134 => 51,  129 => 50,  126 => 49,  114 => 40,  108 => 37,  103 => 35,  98 => 33,  94 => 32,  88 => 29,  84 => 28,  78 => 25,  74 => 24,  68 => 21,  64 => 20,  58 => 17,  54 => 16,  48 => 13,  43 => 11,  33 => 4,  30 => 3,  11 => 1,);
     }
 }
 /* {% extends ('layout.html.twig') %}*/
@@ -206,7 +209,7 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
 /*                 </div>*/
 /*                 {{ form_start(edit_form, { 'attr' :{ 'id' : id|default('new-form')} }) }}*/
 /*                 <label for="fecha">Fecha</label>*/
-/*                 <input type="text" class="date form-control" placeholder="asigne una fecha" name="fecha" id="fecha">*/
+/*                 <input type="text" class="date form-control" placeholder="asigne una fecha" name="fecha" id="fecha" value="{{ (dia) }}">*/
 /*                 <br>*/
 /*                 <div class="form-group">*/
 /*                     {{ form_label(edit_form.horario) }}*/

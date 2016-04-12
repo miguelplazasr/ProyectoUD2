@@ -1,0 +1,36 @@
+seguridad_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SeguridadBundle:Default:index }
+
+ud_seguridad_invitados:
+    path: /ud/seguridad/invitados
+    defaults: { _controller: SeguridadBundle:Invitados:index }
+
+ud_seguridad_invitados_show:
+    path: /ud/seguridad/invitados/show/{id}
+    defaults: { _controller: SeguridadBundle:Invitados:show }
+
+ud_seguridad_invitados_new:
+    path: /ud/seguridad/invitados/new
+    defaults: { _controller: SeguridadBundle:Invitados:new }
+
+ud_seguridad_invitados_create:
+    path: /ud/seguridad/invitados/create
+    defaults: { _controller: SeguridadBundle:Invitados:create }
+
+ud_seguridad_invitados_edit:
+    path: /ud/seguridad/invitados/edit/{id}
+    defaults: { _controller: SeguridadBundle:Invitados:edit }
+
+ud_seguridad_invitados_update:
+    path: /ud/seguridad/invitados/update/{id}
+    defaults: { _controller: SeguridadBundle:Invitados:update }
+
+ud_seguridad_invitados_delete:
+    path: /ud/seguridad/invitados/delete/{id}
+    defaults: { _controller: SeguridadBundle:Invitados:delete }
+
+ud_seguridad_invitados_find:
+    path: /ud/seguridad/invitados/find
+    defaults: { _controller: SeguridadBundle:Invitados:find }
+

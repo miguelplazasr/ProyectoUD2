@@ -21,20 +21,20 @@ class __TwigTemplate_2d60871746e1efb9c21cc8c16c45074340a90fcb2e024af4d2cedb977d4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ab9b7a046a73b7667d4d6639215f48ea1b06d0908c8858068feca933fa9c5afe = $this->env->getExtension("native_profiler");
-        $__internal_ab9b7a046a73b7667d4d6639215f48ea1b06d0908c8858068feca933fa9c5afe->enter($__internal_ab9b7a046a73b7667d4d6639215f48ea1b06d0908c8858068feca933fa9c5afe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ActivosBundle:ElementosActivos:index.html.twig"));
+        $__internal_1851a44746aa713c6340bfa00fd8223291e478cc2c23080cf8c6f257b5169121 = $this->env->getExtension("native_profiler");
+        $__internal_1851a44746aa713c6340bfa00fd8223291e478cc2c23080cf8c6f257b5169121->enter($__internal_1851a44746aa713c6340bfa00fd8223291e478cc2c23080cf8c6f257b5169121_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ActivosBundle:ElementosActivos:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ab9b7a046a73b7667d4d6639215f48ea1b06d0908c8858068feca933fa9c5afe->leave($__internal_ab9b7a046a73b7667d4d6639215f48ea1b06d0908c8858068feca933fa9c5afe_prof);
+        $__internal_1851a44746aa713c6340bfa00fd8223291e478cc2c23080cf8c6f257b5169121->leave($__internal_1851a44746aa713c6340bfa00fd8223291e478cc2c23080cf8c6f257b5169121_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_89e9284c0b8b63368604cde7b2790f38750a4758b577f75f81edbbbebe6130ea = $this->env->getExtension("native_profiler");
-        $__internal_89e9284c0b8b63368604cde7b2790f38750a4758b577f75f81edbbbebe6130ea->enter($__internal_89e9284c0b8b63368604cde7b2790f38750a4758b577f75f81edbbbebe6130ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_66f27c8f24b67b39a54bfc86d838f9e0e4828a3156475a86f616074f821a4197 = $this->env->getExtension("native_profiler");
+        $__internal_66f27c8f24b67b39a54bfc86d838f9e0e4828a3156475a86f616074f821a4197->enter($__internal_66f27c8f24b67b39a54bfc86d838f9e0e4828a3156475a86f616074f821a4197_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<div class=\"container\">
@@ -80,11 +80,20 @@ class __TwigTemplate_2d60871746e1efb9c21cc8c16c45074340a90fcb2e024af4d2cedb977d4
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_activos_elementos_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-sm btn-info\">Mostrar</a>
                                 <br>
-                                <br>
                                 <a href=\"";
-            // line 29
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_activos_elementos_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-sm btn-warning\">Editar</a>
+                                <br>
+                                ";
+            // line 30
+            echo             $this->env->getExtension('form')->renderer->renderBlock($this->getAttribute((isset($context["delete_forms"]) ? $context["delete_forms"] : $this->getContext($context, "delete_forms")), $this->getAttribute($context["entity"], "id", array()), array(), "array"), 'form_start');
+            echo "
+                                <button type=\"submit\" class=\"btn btn-sm btn-danger\" onclick=\"return confirm('Esta seguro de borrar este prestamo?')\">Eliminar</button>
+                                ";
+            // line 32
+            echo             $this->env->getExtension('form')->renderer->renderBlock($this->getAttribute((isset($context["delete_forms"]) ? $context["delete_forms"] : $this->getContext($context, "delete_forms")), $this->getAttribute($context["entity"], "id", array()), array(), "array"), 'form_end');
+            echo "
                             </td>
                         </tr>
                     ";
@@ -92,12 +101,12 @@ class __TwigTemplate_2d60871746e1efb9c21cc8c16c45074340a90fcb2e024af4d2cedb977d4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 36
         echo "                    </tbody>
                 </table>
             </div>
             <a href=\"";
-        // line 36
+        // line 39
         echo $this->env->getExtension('routing')->getPath("ud_activos_elementos_new");
         echo "\" class=\"btn btn-sm btn-default\">
                 Nuevo Activo
@@ -106,7 +115,7 @@ class __TwigTemplate_2d60871746e1efb9c21cc8c16c45074340a90fcb2e024af4d2cedb977d4
     </div>
 ";
         
-        $__internal_89e9284c0b8b63368604cde7b2790f38750a4758b577f75f81edbbbebe6130ea->leave($__internal_89e9284c0b8b63368604cde7b2790f38750a4758b577f75f81edbbbebe6130ea_prof);
+        $__internal_66f27c8f24b67b39a54bfc86d838f9e0e4828a3156475a86f616074f821a4197->leave($__internal_66f27c8f24b67b39a54bfc86d838f9e0e4828a3156475a86f616074f821a4197_prof);
 
     }
 
@@ -122,7 +131,7 @@ class __TwigTemplate_2d60871746e1efb9c21cc8c16c45074340a90fcb2e024af4d2cedb977d4
 
     public function getDebugInfo()
     {
-        return array (  101 => 36,  96 => 33,  86 => 29,  80 => 26,  75 => 24,  71 => 23,  65 => 22,  62 => 21,  58 => 20,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  110 => 39,  105 => 36,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  71 => 23,  65 => 22,  62 => 21,  58 => 20,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'layout.html.twig' %}*/
@@ -152,8 +161,11 @@ class __TwigTemplate_2d60871746e1efb9c21cc8c16c45074340a90fcb2e024af4d2cedb977d4
 /*                             <td class="actions">*/
 /*                                 <a href="{{ path('ud_activos_elementos_show', { 'id': entity.id }) }}" class="btn btn-sm btn-info">Mostrar</a>*/
 /*                                 <br>*/
-/*                                 <br>*/
 /*                                 <a href="{{ path('ud_activos_elementos_edit', { 'id': entity.id }) }}" class="btn btn-sm btn-warning">Editar</a>*/
+/*                                 <br>*/
+/*                                 {{ form_start(delete_forms[entity.id]) }}*/
+/*                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este prestamo?')">Eliminar</button>*/
+/*                                 {{ form_end(delete_forms[entity.id]) }}*/
 /*                             </td>*/
 /*                         </tr>*/
 /*                     {% endfor %}*/

@@ -21,20 +21,20 @@ class __TwigTemplate_ad7e953e015b3dcdcdf4a42934ed45f01d33b48b4d1a92923504a64a3d3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_09be4e1332d18ed13240ae9df4f84f3495d16e1bb003c1511ebe1f23f07c8d87 = $this->env->getExtension("native_profiler");
-        $__internal_09be4e1332d18ed13240ae9df4f84f3495d16e1bb003c1511ebe1f23f07c8d87->enter($__internal_09be4e1332d18ed13240ae9df4f84f3495d16e1bb003c1511ebe1f23f07c8d87_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SalonesBundle:Salones:edit.html.twig"));
+        $__internal_18acb8a58ab10669291f7dee0b58976ebe4c1b635994a7e70251099a434c4439 = $this->env->getExtension("native_profiler");
+        $__internal_18acb8a58ab10669291f7dee0b58976ebe4c1b635994a7e70251099a434c4439->enter($__internal_18acb8a58ab10669291f7dee0b58976ebe4c1b635994a7e70251099a434c4439_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SalonesBundle:Salones:edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_09be4e1332d18ed13240ae9df4f84f3495d16e1bb003c1511ebe1f23f07c8d87->leave($__internal_09be4e1332d18ed13240ae9df4f84f3495d16e1bb003c1511ebe1f23f07c8d87_prof);
+        $__internal_18acb8a58ab10669291f7dee0b58976ebe4c1b635994a7e70251099a434c4439->leave($__internal_18acb8a58ab10669291f7dee0b58976ebe4c1b635994a7e70251099a434c4439_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_8e1feff15f274571d3139da02d184988d2940c9dc41aad23838944410aea3318 = $this->env->getExtension("native_profiler");
-        $__internal_8e1feff15f274571d3139da02d184988d2940c9dc41aad23838944410aea3318->enter($__internal_8e1feff15f274571d3139da02d184988d2940c9dc41aad23838944410aea3318_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e15af1b34d362b5c7e8d333e821cad81238bd2d522f35245ba5ab9f9df9ed6bc = $this->env->getExtension("native_profiler");
+        $__internal_e15af1b34d362b5c7e8d333e821cad81238bd2d522f35245ba5ab9f9df9ed6bc->enter($__internal_e15af1b34d362b5c7e8d333e821cad81238bd2d522f35245ba5ab9f9df9ed6bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         $this->displayParentBlock("body", $context, $blocks);
@@ -82,7 +82,7 @@ class __TwigTemplate_ad7e953e015b3dcdcdf4a42934ed45f01d33b48b4d1a92923504a64a3d3
 
                 <p>";
         // line 25
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget', array("label" => "Agregar Rol", "attr" => array("class" => "btn btn-success")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget', array("label" => "Editar sala", "attr" => array("class" => "btn btn-success")));
         echo "</p>
                 ";
         // line 26
@@ -112,7 +112,7 @@ class __TwigTemplate_ad7e953e015b3dcdcdf4a42934ed45f01d33b48b4d1a92923504a64a3d3
     </div>
 ";
         
-        $__internal_8e1feff15f274571d3139da02d184988d2940c9dc41aad23838944410aea3318->leave($__internal_8e1feff15f274571d3139da02d184988d2940c9dc41aad23838944410aea3318_prof);
+        $__internal_e15af1b34d362b5c7e8d333e821cad81238bd2d522f35245ba5ab9f9df9ed6bc->leave($__internal_e15af1b34d362b5c7e8d333e821cad81238bd2d522f35245ba5ab9f9df9ed6bc_prof);
 
     }
 
@@ -155,7 +155,7 @@ class __TwigTemplate_ad7e953e015b3dcdcdf4a42934ed45f01d33b48b4d1a92923504a64a3d3
 /*                     {{ form_widget(edit_form.descripcion, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite un rol'}}) }}*/
 /*                 </div>*/
 /* */
-/*                 <p>{{ form_widget(edit_form.submit, { 'label': 'Agregar Rol', 'attr' : {'class' : 'btn btn-success' }}) }}</p>*/
+/*                 <p>{{ form_widget(edit_form.submit, { 'label': 'Editar sala', 'attr' : {'class' : 'btn btn-success' }}) }}</p>*/
 /*                 {{ form_end(edit_form) }}*/
 /*                 <p>*/
 /*                     {{ form_start(delete_form) }}*/
