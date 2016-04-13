@@ -20,7 +20,7 @@ $(document).ready(function(){
             alert('El usuario existe');
             var id = JSON.stringify(data);
             alert(data);
-            $('#proyecto_deportesbundle_prestamodeportes_users').val(data).change().hide();
+            $('#users').val(data).change().hide();
             $('#elementos').show();
             $('#searchbox').prop('readonly', true);
             $('.btn-search').hide();

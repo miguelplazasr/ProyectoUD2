@@ -3,8 +3,18 @@
 {% block body -%}
     <div class="container">
 
-        {% for flashMessage in app.session.flashbag.get('notice') %}
-            <div class="alert-danger">
+        {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert-success">
+            {{ flashMessage }}
+        </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('danger') %}
+        <div class="alert-danger">
+            {{ flashMessage }}
+        </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('warning') %}
+            <div class="alert-warning">
                 {{ flashMessage }}
             </div>
         {% endfor %}
@@ -43,7 +53,7 @@
                     </tbody>
                 </table>
             </div>
-            <a href="{{ path('ud_deportes_prestamo_new') }}" class="btn btn-sm btn-primary">
+            <a href="{{ path('ud_deportes_prestamo_new') }}" class="btn btn-sm btn-link">
                 Nuevo Prestamo
             </a>
         </div>

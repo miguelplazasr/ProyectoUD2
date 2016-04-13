@@ -151,6 +151,12 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      */
     private $psalas;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Proyecto\DeportesBundle\Entity\MultaDeportes", mappedBy="users")
+     * @Assert\valid
+     */
+    private $mdeportes;
+
 
     public function __construct(){
         $this->roles = new ArrayCollection();
@@ -159,17 +165,18 @@ class Usuarios implements AdvancedUserInterface, \Serializable
         $this->remer = new ArrayCollection();
         $this->pactivo = new ArrayCollection();
         $this->psalas = new ArrayCollection();
+        $this->mdeportes = new ArrayCollection();
     }
 
     public function __toString(){
-        return $this->getUsername();
+        return $this->getId();
     }
 
 
     /**
      * Get id
      *
-     * @return integer
+     * @return string
      */
     public function getId()
     {
@@ -810,5 +817,38 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     public function getPsalas()
     {
         return $this->psalas;
+    }
+
+    /**
+     * Add mdeportes
+     *
+     * @param \Proyecto\DeportesBundle\Entity\MultaDeportes $mdeportes
+     * @return Usuarios
+     */
+    public function addMdeporte(\Proyecto\DeportesBundle\Entity\MultaDeportes $mdeportes)
+    {
+        $this->mdeportes[] = $mdeportes;
+
+        return $this;
+    }
+
+    /**
+     * Remove mdeportes
+     *
+     * @param \Proyecto\DeportesBundle\Entity\MultaDeportes $mdeportes
+     */
+    public function removeMdeporte(\Proyecto\DeportesBundle\Entity\MultaDeportes $mdeportes)
+    {
+        $this->mdeportes->removeElement($mdeportes);
+    }
+
+    /**
+     * Get mdeportes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMdeportes()
+    {
+        return $this->mdeportes;
     }
 }

@@ -33,9 +33,6 @@ app:
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
-adesigns_calendar:
-  resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
-
 ud_enfermeria_reporte_search:
     path: /ud/enfermeria/reporte/search/{id}
     defaults: { _controller: "EnfermeriaBundle:ReporteEmergencia:search"}

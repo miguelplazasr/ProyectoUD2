@@ -46,6 +46,6 @@ class PrestamoDeportesType extends AbstractType
      */
     public function getName()
     {
-        return 'proyecto_deportesbundle_prestamodeportes';
+        return null;
     }
 }

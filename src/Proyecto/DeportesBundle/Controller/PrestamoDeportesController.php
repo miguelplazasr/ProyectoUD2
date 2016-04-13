@@ -11,6 +11,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Proyecto\DeportesBundle\Entity\PrestamoDeportes;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Proyecto\DeportesBundle\Entity\MultaDeportes;
 
 /**
  * PrestamoDeportes controller.
@@ -34,6 +36,7 @@ class PrestamoDeportesController extends Controller
         $entities = $em->getRepository('DeportesBundle:PrestamoDeportes')->findAll();
 
         $deleteForms = array();
+        $multasForms = array();
 
         foreach($entities as $entity){
             $deleteForms[$entity->getId()] = $this->createDeleteForm($entity->getId())->createView();
@@ -84,15 +87,27 @@ class PrestamoDeportesController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        $iden = $request->get('users');
+
+        $consulta = $em->getRepository('DeportesBundle:MultaDeportes')->findByUsers($iden);
+
         if($form->isValid()) {
             try {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($entity);
-                $em->flush();
-                return $this->redirect($this->generateUrl('ud_deportes_prestamo_show', array('id' => $entity->getId())));
+                    if($consulta){
+                        $this->get('session')->getFlashBag()->add(
+                            'danger',
+                            'EL usuario tiene una multa existente no se puede hacer el prestamo'
+                        );
+                        return $this->redirectToRoute('ud_deportes_prestamo');
+                    }else{
+                        $em = $this->getDoctrine()->getManager();
+                        $em->persist($entity);
+                        $em->flush();
+                        return $this->redirect($this->generateUrl('ud_deportes_prestamo_show', array('id' => $entity->getId())));
+                    }
             } catch (\Doctrine\DBAL\DBALException $e){
                 $this->get('session')->getFlashBag()->add(
-                    'notice',
+                    'danger',
                     'Solo un prestamo por persona'
                 );
                 return $this->redirectToRoute('ud_deportes_prestamo');
@@ -163,6 +178,8 @@ class PrestamoDeportesController extends Controller
     public function deleteAction(Request $request, $id)
     {
 
+        $ffactual = new \DateTime();
+
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -171,19 +188,43 @@ class PrestamoDeportesController extends Controller
 
             $entity = $em->getRepository('DeportesBundle:PrestamoDeportes')->find($id);
 
+            $multa = new MultaDeportes();
+
             if (!$entity){
                 throw $this->createNotFoundException('No existe el usuario');
             }
 
-            $entity->getIdeportes()->setCantidad($entity->getIdeportes()->getCantidad() + 1);
+            $ffinal = $entity->getFechaDevolucion();
 
-            $em->remove($entity);
-            $em->flush();
+            $iden = $ffinal->getTimestamp();
 
-            $this->get('session')->getFlashBag()->add(
-                'notice',
-                'Prestamo Borrado Correctamente'
-            );
+            if($ffactual > $ffinal){
+                $multa->setId($iden);
+                $multa->setDetalle('Se genera multa por que no se entrego a tiempo');
+                $multa->setValor(5000);
+                $multa->setUsers($entity->getUsers());
+
+                $entity->getIdeportes()->setCantidad($entity->getIdeportes()->getCantidad() + 1);
+
+                $em->persist($multa);
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add(
+                    'warning',
+                    'Prestamo Borrado Correctamente y se envio a multa'
+                );
+            }else{
+                $entity->getIdeportes()->setCantidad($entity->getIdeportes()->getCantidad() + 1);
+
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add(
+                    'success',
+                    'Prestamo Borrado Correctamente'
+                );
+            }
         }
 
         return $this->redirect($this->generateUrl('ud_deportes_prestamo'));
@@ -205,6 +246,8 @@ class PrestamoDeportesController extends Controller
             ->getForm()
             ;
     }
+
+
 
     /**
      * @Route("/search/{id}" , name="ud_deportes_prestamo_search", options={"expose"=true})

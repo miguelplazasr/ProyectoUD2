@@ -3,8 +3,8 @@ $(document).ready(function(){
     $('.success').hide();
     $('.danger').hide();
 
-    $('#proyecto_deportesbundle_prestamodeportes_ideportes').change(function(event){
-        var $id = $('#proyecto_deportesbundle_prestamodeportes_ideportes').val();
+    $('#ideportes').change(function(event){
+        var $id = $('#ideportes').val();
         event.preventDefault();
         $.ajax({
             url: Routing.generate('ud_deportes_prestamo_cantidad', {'id': $id}),
