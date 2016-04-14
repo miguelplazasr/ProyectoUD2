@@ -357,6 +357,19 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             }
 
+            if (0 === strpos($pathinfo, '/ud/activos/multas')) {
+                // ud_activos_multas
+                if ($pathinfo === '/ud/activos/multas') {
+                    return array (  '_controller' => 'Proyecto\\ActivosBundle\\Controller\\MultaActivosController::indexAction',  '_route' => 'ud_activos_multas',);
+                }
+
+                // ud_activos_multas_delete
+                if (0 === strpos($pathinfo, '/ud/activos/multas/delete') && preg_match('#^/ud/activos/multas/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_activos_multas_delete')), array (  '_controller' => 'Proyecto\\ActivosBundle\\Controller\\MultaActivosController::deleteAction',));
+                }
+
+            }
+
         }
 
         // deportes_homepage
@@ -465,6 +478,19 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 // ud_deportes_prestamo_delete
                 if (0 === strpos($pathinfo, '/ud/deportes/prestamo/delete') && preg_match('#^/ud/deportes/prestamo/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_deportes_prestamo_delete')), array (  '_controller' => 'Proyecto\\DeportesBundle\\Controller\\PrestamoDeportesController::deleteAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/ud/deportes/multas')) {
+                // ud_deportes_multas
+                if ($pathinfo === '/ud/deportes/multas') {
+                    return array (  '_controller' => 'Proyecto\\DeportesBundle\\Controller\\MultaDeportesController::indexAction',  '_route' => 'ud_deportes_multas',);
+                }
+
+                // ud_deportes_multas_delete
+                if (0 === strpos($pathinfo, '/ud/deportes/multas/delete') && preg_match('#^/ud/deportes/multas/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ud_deportes_multas_delete')), array (  '_controller' => 'Proyecto\\DeportesBundle\\Controller\\MultaDeportesController::deleteAction',));
                 }
 
             }
@@ -605,11 +631,6 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         // fos_js_routing_js
         if (0 === strpos($pathinfo, '/js/routing') && preg_match('#^/js/routing(?:\\.(?P<_format>js|json))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_js_routing_js')), array (  '_controller' => 'fos_js_routing.controller:indexAction',  '_format' => 'js',));
-        }
-
-        // fullcalendar_loader
-        if ($pathinfo === '/fc-load-events') {
-            return array (  '_controller' => 'ADesigns\\CalendarBundle\\Controller\\CalendarController::loadCalendarAction',  '_route' => 'fullcalendar_loader',);
         }
 
         if (0 === strpos($pathinfo, '/ud')) {

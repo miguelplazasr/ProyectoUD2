@@ -47,6 +47,6 @@ class PrestamoActivoType extends AbstractType
      */
     public function getName()
     {
-        return 'proyecto_activosbundle_prestamoactivo';
+        return null;
     }
 }

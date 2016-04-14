@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class PrestamoActivoRepository extends EntityRepository
 {
+    public function findByPrestamo($id, $stock)
+    {
+        $em = $this->getEntityManager();
+
+        $consulta = $em->createQuery('
+            SELECT a.id, a.cantidad, a.fechaEntrega, a.fechaDevolucion, u.id
+            FROM ActivosBundle:PrestamoActivo a JOIN a.users u
+            WHERE a.users = :id AND a.sactivo = :stock
+        ');
+
+        $consulta->setParameter('id', $id);
+        $consulta->setParameter('stock', $stock);
+
+        return $consulta->getResult();
+    }
 }

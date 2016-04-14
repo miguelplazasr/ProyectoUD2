@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+<div class="container">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>Lista de multas</h1>
+        </div>
+        <div class="table-responsive">
+               <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Detalle</th>
+                    <th>Valor</th>
+                    <th>Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                    <tr>
+                        <td>{{ entity.id }}</td>
+                        <td>{{ entity.detalle }}</td>
+                        <td>{{ entity.valor }}</td>
+                        <td>{{ entity.users.id }}</td>
+                        <td class="actions">
+                            {{ form_start(delete_forms[entity.id]) }}
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este prestamo?')">Eliminar</button>
+                            {{ form_end(delete_forms[entity.id]) }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

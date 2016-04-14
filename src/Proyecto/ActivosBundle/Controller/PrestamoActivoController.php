@@ -2,6 +2,7 @@
 
 namespace Proyecto\ActivosBundle\Controller;
 
+use Proyecto\ActivosBundle\Entity\MultaActivos;
 use Symfony\Component\HttpFoundation\Request;
 use Proyecto\ActivosBundle\Form\PrestamoActivoType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -82,17 +83,43 @@ class PrestamoActivoController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $iden = $request->get('users');
+
+        $multa =  $em->getRepository('ActivosBundle:MultaActivos')->findByUsers($iden);
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            $entity->getSactivo()->setCantidad($entity->getSactivo()->getCantidad() - $entity->getCantidad());
+            $stock = $request->get('sactivo');
+            $id = $request->get('users');
 
-            $em->persist($entity);
-            $em->flush();
+            $consulta = $em->getRepository('ActivosBundle:PrestamoActivo')->findByPrestamo($id, $stock);
 
-            return $this->redirect($this->generateUrl('ud_activos_prestamo_show', array('id' => $entity->getId())));
+           if($multa){
+               $this->get('session')->getFlashBag()->add(
+                   'danger',
+                   'El usuario ya tiene una multa actualmente no se puede realizar el prestamo'
+               );
+               return $this->redirectToRoute('ud_activos_prestamo');
+           }else{
+               if($consulta){
+                   $this->get('session')->getFlashBag()->add(
+                       'danger',
+                       'El usuario ya tiene un prestamo con el elemento del stock'
+                   );
+                   return $this->redirectToRoute('ud_activos_prestamo');
+               }else{
+                   $entity->getSactivo()->setCantidad($entity->getSactivo()->getCantidad() - $entity->getCantidad());
+
+                   $em->persist($entity);
+                   $em->flush();
+
+                   return $this->redirect($this->generateUrl('ud_activos_prestamo_show', array('id' => $entity->getId())));
+               }
+           }
         }
-
         return array(
             'entity' => $entity,
             'form' => $form
@@ -148,6 +175,9 @@ class PrestamoActivoController extends Controller
 
     public function deleteAction(Request $request, $id)
     {
+
+        $ffactual = new \DateTime();
+
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -156,19 +186,44 @@ class PrestamoActivoController extends Controller
 
             $entity = $em->getRepository('ActivosBundle:PrestamoActivo')->find($id);
 
+            $multa = new MultaActivos();
+
             if (!$entity) {
                 throw $this->createNotFoundException('No existe el usuario');
             }
 
-            $entity->getSactivo()->setCantidad($entity->getSactivo()->getCantidad() + $entity->getCantidad());
+            $ffinal = $entity->getFechaDevolucion();
 
-            $em->remove($entity);
-            $em->flush();
+            $iden = $ffactual->getTimestamp();
 
-            $this->get('session')->getFlashBag()->add(
-                'notice',
-                'Prestamo Borrado Correctamente'
-            );
+            if($ffactual > $ffinal){
+
+                $multa->setId($iden);
+                $multa->setDetalle('Se genera multa por que el activo no se entrego a tiempo');
+                $multa->setValor(5000);
+                $multa->setUsers($entity->getUsers());
+
+                $entity->getSactivo()->setCantidad($entity->getSactivo()->getCantidad() + $entity->getCantidad());
+
+                $em->persist($multa);
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add(
+                    'warning',
+                    'Prestamo Borrado Correctamente y se envio a multa'
+                );
+            }else{
+                $entity->getSactivo()->setCantidad($entity->getSactivo()->getCantidad() + $entity->getCantidad());
+
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add(
+                    'success',
+                    'Prestamo Borrado Correctamente'
+                );
+            }
         }
 
         return $this->redirect($this->generateUrl('ud_activos_prestamo'));

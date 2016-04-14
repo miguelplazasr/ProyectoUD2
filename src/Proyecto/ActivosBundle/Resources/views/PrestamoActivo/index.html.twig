@@ -3,11 +3,21 @@
 {% block body -%}
 <div class="container">
 
-    {% for flashMessage in app.session.flashbag.get('notice') %}
+        {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert-success">
+            {{ flashMessage }}
+        </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('danger') %}
         <div class="alert-danger">
             {{ flashMessage }}
         </div>
-    {% endfor %}
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('warning') %}
+            <div class="alert-warning">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
 
     <div class="col-md-12">
         <div class="page-header">

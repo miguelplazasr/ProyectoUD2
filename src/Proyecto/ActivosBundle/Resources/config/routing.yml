@@ -82,7 +82,14 @@ ud_activos_prestamo_delete:
     path: /ud/activos/prestamo/delete/{id}
     defaults: { _controller: ActivosBundle:PrestamoActivo:delete }
 
+#multas
+ud_activos_multas:
+    path: /ud/activos/multas
+    defaults: { _controller: ActivosBundle:MultaActivos:index }
 
+ud_activos_multas_delete:
+    path: /ud/activos/multas/delete/{id}
+    defaults: { _controller: ActivosBundle:MultaActivos:delete }
 
 
 

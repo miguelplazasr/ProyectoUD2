@@ -157,6 +157,12 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      */
     private $mdeportes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Proyecto\ActivosBundle\Entity\MultaActivos", mappedBy="users")
+     * @Assert\valid
+     */
+    private $mactivos;
+
 
     public function __construct(){
         $this->roles = new ArrayCollection();
@@ -166,6 +172,7 @@ class Usuarios implements AdvancedUserInterface, \Serializable
         $this->pactivo = new ArrayCollection();
         $this->psalas = new ArrayCollection();
         $this->mdeportes = new ArrayCollection();
+        $this->mactivos = new ArrayCollection();
     }
 
     public function __toString(){
@@ -850,5 +857,38 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     public function getMdeportes()
     {
         return $this->mdeportes;
+    }
+
+    /**
+     * Add mactivos
+     *
+     * @param \Proyecto\ActivosBundle\Entity\MultaActivos $mactivos
+     * @return Usuarios
+     */
+    public function addMactivo(\Proyecto\ActivosBundle\Entity\MultaActivos $mactivos)
+    {
+        $this->mactivos[] = $mactivos;
+
+        return $this;
+    }
+
+    /**
+     * Remove mactivos
+     *
+     * @param \Proyecto\ActivosBundle\Entity\MultaActivos $mactivos
+     */
+    public function removeMactivo(\Proyecto\ActivosBundle\Entity\MultaActivos $mactivos)
+    {
+        $this->mactivos->removeElement($mactivos);
+    }
+
+    /**
+     * Get mactivos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMactivos()
+    {
+        return $this->mactivos;
     }
 }

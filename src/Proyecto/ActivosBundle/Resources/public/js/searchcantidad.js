@@ -3,8 +3,8 @@ $(document).ready(function(){
     $('.success').hide();
     $('.danger').hide();
 
-    $('#proyecto_activosbundle_prestamoactivo_sactivo').change(function(event){
-        var $id = $('#proyecto_activosbundle_prestamoactivo_sactivo').val();
+    $('#sactivo').change(function(event){
+        var $id = $('#sactivo').val();
         event.preventDefault();
         $.ajax({
             url: Routing.generate('ud_activos_prestamo_cantidad', {'id': $id}),
@@ -21,6 +21,7 @@ $(document).ready(function(){
             if (data > 0){
                 $('#form-rest').show();
                 $('.success').show().append(data);
+                $('#cantidad').attr('max', data);
                 $('.danger').hide();
             }else{
                 $('#form-rest').hide();

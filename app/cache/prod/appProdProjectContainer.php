@@ -480,10 +480,9 @@ class appProdProjectContainer extends Container
     {
         $a = $this->get('annotation_reader');
 
-        $b = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'\\vendor\\adesigns\\calendar-bundle\\ADesigns\\CalendarBundle\\Entity'), 1 => ($this->targetDirs[3].'\\src\\Proyecto\\AdminBundle\\Entity'), 2 => ($this->targetDirs[3].'\\src\\Proyecto\\DeportesBundle\\Entity'), 3 => ($this->targetDirs[3].'\\src\\Proyecto\\ActivosBundle\\Entity'), 4 => ($this->targetDirs[3].'\\src\\Proyecto\\EnfermeriaBundle\\Entity'), 5 => ($this->targetDirs[3].'\\src\\Proyecto\\SalonesBundle\\Entity'), 6 => ($this->targetDirs[3].'\\src\\Proyecto\\SeguridadBundle\\Entity')));
+        $b = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'\\src\\Proyecto\\AdminBundle\\Entity'), 1 => ($this->targetDirs[3].'\\src\\Proyecto\\DeportesBundle\\Entity'), 2 => ($this->targetDirs[3].'\\src\\Proyecto\\ActivosBundle\\Entity'), 3 => ($this->targetDirs[3].'\\src\\Proyecto\\EnfermeriaBundle\\Entity'), 4 => ($this->targetDirs[3].'\\src\\Proyecto\\SalonesBundle\\Entity'), 5 => ($this->targetDirs[3].'\\src\\Proyecto\\SeguridadBundle\\Entity')));
 
         $c = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
-        $c->addDriver($b, 'ADesigns\\CalendarBundle\\Entity');
         $c->addDriver($b, 'Proyecto\\AdminBundle\\Entity');
         $c->addDriver($b, 'Proyecto\\DeportesBundle\\Entity');
         $c->addDriver($b, 'Proyecto\\ActivosBundle\\Entity');
@@ -492,7 +491,7 @@ class appProdProjectContainer extends Container
         $c->addDriver($b, 'Proyecto\\SeguridadBundle\\Entity');
 
         $d = new \Doctrine\ORM\Configuration();
-        $d->setEntityNamespaces(array('ADesignsCalendarBundle' => 'ADesigns\\CalendarBundle\\Entity', 'AdminBundle' => 'Proyecto\\AdminBundle\\Entity', 'DeportesBundle' => 'Proyecto\\DeportesBundle\\Entity', 'ActivosBundle' => 'Proyecto\\ActivosBundle\\Entity', 'EnfermeriaBundle' => 'Proyecto\\EnfermeriaBundle\\Entity', 'SalonesBundle' => 'Proyecto\\SalonesBundle\\Entity', 'SeguridadBundle' => 'Proyecto\\SeguridadBundle\\Entity'));
+        $d->setEntityNamespaces(array('AdminBundle' => 'Proyecto\\AdminBundle\\Entity', 'DeportesBundle' => 'Proyecto\\DeportesBundle\\Entity', 'ActivosBundle' => 'Proyecto\\ActivosBundle\\Entity', 'EnfermeriaBundle' => 'Proyecto\\EnfermeriaBundle\\Entity', 'SalonesBundle' => 'Proyecto\\SalonesBundle\\Entity', 'SeguridadBundle' => 'Proyecto\\SeguridadBundle\\Entity'));
         $d->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
         $d->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
         $d->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
@@ -1505,7 +1504,7 @@ class appProdProjectContainer extends Container
      */
     protected function getFosJsRouting_ExtractorService()
     {
-        return $this->services['fos_js_routing.extractor'] = new \FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor($this->get('router'), array(), __DIR__, array('FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle', 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle', 'TwigBundle' => 'Symfony\\Bundle\\TwigBundle\\TwigBundle', 'MonologBundle' => 'Symfony\\Bundle\\MonologBundle\\MonologBundle', 'SwiftmailerBundle' => 'Symfony\\Bundle\\SwiftmailerBundle\\SwiftmailerBundle', 'AsseticBundle' => 'Symfony\\Bundle\\AsseticBundle\\AsseticBundle', 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle', 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle', 'AppBundle' => 'AppBundle\\AppBundle', 'FOSJsRoutingBundle' => 'FOS\\JsRoutingBundle\\FOSJsRoutingBundle', 'FOSElasticaBundle' => 'FOS\\ElasticaBundle\\FOSElasticaBundle', 'ADesignsCalendarBundle' => 'ADesigns\\CalendarBundle\\ADesignsCalendarBundle', 'AdminBundle' => 'Proyecto\\AdminBundle\\AdminBundle', 'DeportesBundle' => 'Proyecto\\DeportesBundle\\DeportesBundle', 'ActivosBundle' => 'Proyecto\\ActivosBundle\\ActivosBundle', 'EnfermeriaBundle' => 'Proyecto\\EnfermeriaBundle\\EnfermeriaBundle', 'SalonesBundle' => 'Proyecto\\SalonesBundle\\SalonesBundle', 'CarnetBundle' => 'Proyecto\\CarnetBundle\\CarnetBundle', 'SeguridadBundle' => 'Proyecto\\SeguridadBundle\\SeguridadBundle'));
+        return $this->services['fos_js_routing.extractor'] = new \FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor($this->get('router'), array(), __DIR__, array('FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle', 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle', 'TwigBundle' => 'Symfony\\Bundle\\TwigBundle\\TwigBundle', 'MonologBundle' => 'Symfony\\Bundle\\MonologBundle\\MonologBundle', 'SwiftmailerBundle' => 'Symfony\\Bundle\\SwiftmailerBundle\\SwiftmailerBundle', 'AsseticBundle' => 'Symfony\\Bundle\\AsseticBundle\\AsseticBundle', 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle', 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle', 'AppBundle' => 'AppBundle\\AppBundle', 'FOSJsRoutingBundle' => 'FOS\\JsRoutingBundle\\FOSJsRoutingBundle', 'FOSElasticaBundle' => 'FOS\\ElasticaBundle\\FOSElasticaBundle', 'AdminBundle' => 'Proyecto\\AdminBundle\\AdminBundle', 'DeportesBundle' => 'Proyecto\\DeportesBundle\\DeportesBundle', 'ActivosBundle' => 'Proyecto\\ActivosBundle\\ActivosBundle', 'EnfermeriaBundle' => 'Proyecto\\EnfermeriaBundle\\EnfermeriaBundle', 'SalonesBundle' => 'Proyecto\\SalonesBundle\\SalonesBundle', 'CarnetBundle' => 'Proyecto\\CarnetBundle\\CarnetBundle', 'SeguridadBundle' => 'Proyecto\\SeguridadBundle\\SeguridadBundle'));
     }
 
     /*
@@ -2080,7 +2079,7 @@ class appProdProjectContainer extends Container
 
         $e = new \Symfony\Component\Security\Http\AccessMap();
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '570c61b01269c3.88011418', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '570ed9b9bb3f68.20177226', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
     }
 
     /*
@@ -3062,7 +3061,6 @@ class appProdProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\swiftmailer-bundle/Resources/views'), 'Swiftmailer');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\doctrine\\doctrine-bundle/Resources/views'), 'Doctrine');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\friendsofsymfony\\elastica-bundle/Resources/views'), 'FOSElastica');
-        $instance->addPath(($this->targetDirs[3].'\\vendor\\adesigns\\calendar-bundle\\ADesigns\\CalendarBundle/Resources/views'), 'ADesignsCalendar');
         $instance->addPath(($this->targetDirs[3].'\\src\\Proyecto\\AdminBundle/Resources/views'), 'Admin');
         $instance->addPath(($this->targetDirs[3].'\\src\\Proyecto\\DeportesBundle/Resources/views'), 'Deportes');
         $instance->addPath(($this->targetDirs[3].'\\src\\Proyecto\\ActivosBundle/Resources/views'), 'Activos');
@@ -3272,7 +3270,7 @@ class appProdProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('570c61b01269c3.88011418')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('570ed9b9bb3f68.20177226')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -3468,7 +3466,6 @@ class appProdProjectContainer extends Container
                 'AppBundle' => 'AppBundle\\AppBundle',
                 'FOSJsRoutingBundle' => 'FOS\\JsRoutingBundle\\FOSJsRoutingBundle',
                 'FOSElasticaBundle' => 'FOS\\ElasticaBundle\\FOSElasticaBundle',
-                'ADesignsCalendarBundle' => 'ADesigns\\CalendarBundle\\ADesignsCalendarBundle',
                 'AdminBundle' => 'Proyecto\\AdminBundle\\AdminBundle',
                 'DeportesBundle' => 'Proyecto\\DeportesBundle\\DeportesBundle',
                 'ActivosBundle' => 'Proyecto\\ActivosBundle\\ActivosBundle',
@@ -4009,8 +4006,6 @@ class appProdProjectContainer extends Container
             'fos_elastica.listener.prototype.orm.class' => 'FOS\\ElasticaBundle\\Doctrine\\Listener',
             'fos_elastica.elastica_to_model_transformer.prototype.orm.class' => 'FOS\\ElasticaBundle\\Doctrine\\ORM\\ElasticaToModelTransformer',
             'fos_elastica.manager.orm.class' => 'FOS\\ElasticaBundle\\Doctrine\\RepositoryManager',
-            'fullcalendar.event.class' => 'ADesigns\\CalendarBundle\\Entity\\EventEntity',
-            'fullcalendar.loader.event' => 'calendar.load_events',
             'console.command.ids' => array(
 
             ),

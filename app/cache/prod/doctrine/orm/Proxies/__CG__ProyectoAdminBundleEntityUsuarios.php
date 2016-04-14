@@ -64,10 +64,10 @@ class Usuarios extends \Proyecto\AdminBundle\Entity\Usuarios implements \Doctrin
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'username', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'idCarnet', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'nombres', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'apellidos', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'password', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'salt', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'email', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'estado', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'foto', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'path', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'file', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'isActive', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'roles', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'dependencia', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'ssocial', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'remer', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pdepor', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pactivo', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'psalas');
+            return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'username', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'idCarnet', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'nombres', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'apellidos', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'password', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'salt', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'email', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'estado', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'foto', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'path', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'file', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'isActive', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'roles', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'dependencia', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'ssocial', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'remer', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pdepor', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pactivo', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'psalas', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'mdeportes', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'mactivos');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'username', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'idCarnet', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'nombres', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'apellidos', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'password', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'salt', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'email', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'estado', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'foto', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'path', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'file', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'isActive', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'roles', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'dependencia', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'ssocial', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'remer', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pdepor', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pactivo', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'psalas');
+        return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'username', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'idCarnet', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'nombres', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'apellidos', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'password', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'salt', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'email', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'estado', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'foto', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'path', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'file', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'isActive', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'roles', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'dependencia', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'ssocial', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'remer', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pdepor', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'pactivo', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'psalas', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'mdeportes', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Usuarios' . "\0" . 'mactivos');
     }
 
     /**
@@ -846,6 +846,72 @@ class Usuarios extends \Proyecto\AdminBundle\Entity\Usuarios implements \Doctrin
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPsalas', array());
 
         return parent::getPsalas();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addMdeporte(\Proyecto\DeportesBundle\Entity\MultaDeportes $mdeportes)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addMdeporte', array($mdeportes));
+
+        return parent::addMdeporte($mdeportes);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeMdeporte(\Proyecto\DeportesBundle\Entity\MultaDeportes $mdeportes)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeMdeporte', array($mdeportes));
+
+        return parent::removeMdeporte($mdeportes);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMdeportes()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMdeportes', array());
+
+        return parent::getMdeportes();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addMactivo(\Proyecto\ActivosBundle\Entity\MultaActivos $mactivos)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addMactivo', array($mactivos));
+
+        return parent::addMactivo($mactivos);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeMactivo(\Proyecto\ActivosBundle\Entity\MultaActivos $mactivos)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeMactivo', array($mactivos));
+
+        return parent::removeMactivo($mactivos);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMactivos()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMactivos', array());
+
+        return parent::getMactivos();
     }
 
 }

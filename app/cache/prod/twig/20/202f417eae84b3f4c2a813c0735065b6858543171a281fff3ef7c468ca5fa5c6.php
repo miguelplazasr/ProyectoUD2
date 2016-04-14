@@ -33,12 +33,46 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
         ";
         // line 6
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "notice"), "method"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
             // line 7
-            echo "            <div class=\"alert-danger\">
-                ";
+            echo "        <div class=\"alert-success\">
+            ";
             // line 8
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "
+        </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 11
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "danger"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 12
+            echo "        <div class=\"alert-danger\">
+            ";
+            // line 13
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "
+        </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "warning"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 17
+            echo "            <div class=\"alert-warning\">
+                ";
+            // line 18
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -47,7 +81,7 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 21
         echo "
         <div class=\"col-md-12\">
             <div class=\"page-header\">
@@ -66,47 +100,47 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
                     </thead>
                     <tbody>
                     ";
-        // line 28
+        // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 29
+            // line 39
             echo "                        <tr>
                             <td><a href=\"";
-            // line 30
+            // line 40
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_deportes_prestamo_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                             <td>";
-            // line 31
+            // line 41
             if ($this->getAttribute($context["entity"], "fechaEntrega", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fechaEntrega", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                             <td>";
-            // line 32
+            // line 42
             if ($this->getAttribute($context["entity"], "fechaDevolucion", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fechaDevolucion", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                             <td>";
-            // line 33
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "users", array()), "id", array()), "html", null, true);
             echo "</td>
                             <td class=\"actions\">
                                 <a href=\"";
-            // line 35
+            // line 45
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_deportes_prestamo_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-sm btn-info\">Mostrar</a>
                                 <br>
                                 ";
-            // line 37
+            // line 47
             echo             $this->env->getExtension('form')->renderer->renderBlock($this->getAttribute((isset($context["delete_forms"]) ? $context["delete_forms"] : null), $this->getAttribute($context["entity"], "id", array()), array(), "array"), 'form_start');
             echo "
                                 <button type=\"submit\" class=\"btn btn-sm btn-danger\" onclick=\"return confirm('Esta seguro de borrar este prestamo?')\">Eliminar</button>
                                 ";
-            // line 39
+            // line 49
             echo             $this->env->getExtension('form')->renderer->renderBlock($this->getAttribute((isset($context["delete_forms"]) ? $context["delete_forms"] : null), $this->getAttribute($context["entity"], "id", array()), array(), "array"), 'form_end');
             echo "
                             </td>
@@ -116,14 +150,14 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 53
         echo "                    </tbody>
                 </table>
             </div>
             <a href=\"";
-        // line 46
+        // line 56
         echo $this->env->getExtension('routing')->getPath("ud_deportes_prestamo_new");
-        echo "\" class=\"btn btn-sm btn-primary\">
+        echo "\" class=\"btn btn-sm btn-link\">
                 Nuevo Prestamo
             </a>
         </div>
@@ -143,7 +177,7 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
 
     public function getDebugInfo()
     {
-        return array (  125 => 46,  120 => 43,  110 => 39,  105 => 37,  100 => 35,  95 => 33,  89 => 32,  83 => 31,  77 => 30,  74 => 29,  70 => 28,  51 => 11,  42 => 8,  39 => 7,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  159 => 56,  154 => 53,  144 => 49,  139 => 47,  134 => 45,  129 => 43,  123 => 42,  117 => 41,  111 => 40,  108 => 39,  104 => 38,  85 => 21,  76 => 18,  73 => 17,  68 => 16,  59 => 13,  56 => 12,  51 => 11,  42 => 8,  39 => 7,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'layout.html.twig' %}*/
@@ -151,8 +185,18 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
 /* {% block body -%}*/
 /*     <div class="container">*/
 /* */
-/*         {% for flashMessage in app.session.flashbag.get('notice') %}*/
-/*             <div class="alert-danger">*/
+/*         {% for flashMessage in app.session.flashbag.get('success') %}*/
+/*         <div class="alert-success">*/
+/*             {{ flashMessage }}*/
+/*         </div>*/
+/*         {% endfor %}*/
+/*         {% for flashMessage in app.session.flashbag.get('danger') %}*/
+/*         <div class="alert-danger">*/
+/*             {{ flashMessage }}*/
+/*         </div>*/
+/*         {% endfor %}*/
+/*         {% for flashMessage in app.session.flashbag.get('warning') %}*/
+/*             <div class="alert-warning">*/
 /*                 {{ flashMessage }}*/
 /*             </div>*/
 /*         {% endfor %}*/
@@ -191,7 +235,7 @@ class __TwigTemplate_ffe6fbab699c3f93e4aef82bd12e217ee9bdeb0b36b4f8f23452e2a966e
 /*                     </tbody>*/
 /*                 </table>*/
 /*             </div>*/
-/*             <a href="{{ path('ud_deportes_prestamo_new') }}" class="btn btn-sm btn-primary">*/
+/*             <a href="{{ path('ud_deportes_prestamo_new') }}" class="btn btn-sm btn-link">*/
 /*                 Nuevo Prestamo*/
 /*             </a>*/
 /*         </div>*/

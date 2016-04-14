@@ -84,3 +84,11 @@ ud_deportes_prestamo_delete:
     path:    /ud/deportes/prestamo/delete/{id}
     defaults: { _controller: DeportesBundle:PrestamoDeportes:delete }
 
+#Multas
+ud_deportes_multas:
+    path: /ud/deportes/multas
+    defaults: { _controller: DeportesBundle:MultaDeportes:index }
+
+ud_deportes_multas_delete:
+    path: /ud/deportes/multas/delete/{id}
+    defaults: { _controller: DeportesBundle:MultaDeportes:delete }

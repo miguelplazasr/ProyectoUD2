@@ -88,7 +88,7 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
         echo "
                         ";
         // line 39
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "cantidad", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite un cantidad")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "cantidad", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite un cantidad", "min" => 0)));
         echo "
                     </div>
                     <p>";
@@ -183,7 +183,7 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
 /*                     </div>*/
 /*                     <div class="form-group">*/
 /*                         {{ form_label(form.cantidad) }}*/
-/*                         {{ form_widget(form.cantidad, { 'attr' : {'class' : 'form-control', 'placeholder': 'Digite un cantidad'}}) }}*/
+/*                         {{ form_widget(form.cantidad, { 'attr' : {'class' : 'form-control', 'placeholder': 'Digite un cantidad', 'min': 0 }}) }}*/
 /*                     </div>*/
 /*                     <p>{{ form_widget(form.submit, { 'label': 'Agregar Prestamo', 'attr' : {'class' : 'btn btn-success' }}) }}</p>*/
 /*                 </div>*/
