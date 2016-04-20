@@ -20,14 +20,12 @@ class UsuariosType extends AbstractType
             ->add('idCarnet')
             ->add('nombres')
             ->add('apellidos')
-            ->add('password')
+            //->add('password')
             //->add('salt')
             ->add('email')
             ->add('estado')
             ->add('file')
             //->add('foto')
-            ->add('isActive')
-            ->add('roles')
             ->add('dependencia')
         ;
     }

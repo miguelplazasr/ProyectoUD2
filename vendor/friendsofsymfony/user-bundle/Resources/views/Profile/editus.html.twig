@@ -1,0 +1,9 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="container well">
+        <div class="col-lg-9">
+            {{ form(edit_form) }}
+        </div>
+    </div>
+{% endblock fos_user_content %}

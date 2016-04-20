@@ -3,10 +3,9 @@
 namespace Proyecto\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\Common\Collections\ArrayCollection;
 use Proyecto\AdminBundle\Entity\Dependencia;
-use Proyecto\AdminBundle\Entity\Roles;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -14,11 +13,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 /**
  * Usuarios
  *
- * @ORM\Table()
+ * @ORM\Table(name="usuarios")
  * @ORM\Entity(repositoryClass="Proyecto\AdminBundle\Entity\UsuariosRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class Usuarios implements AdvancedUserInterface, \Serializable
+class Usuarios extends BaseUser
 {
     /**
      * @var string
@@ -27,14 +26,8 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $id;
+    protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255)
-     */
-    private $username;
 
     /**
      * @var string
@@ -57,26 +50,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      */
     private $apellidos;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
-     */
-    private $password;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="salt", type="string", length=255)
-     */
-    private $salt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=70)
-     */
-    private $email;
 
     /**
      * @var string
@@ -102,19 +75,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      * @Assert\File(maxSize="6000000")
      */
     private $file;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="isActive", type="boolean")
-     */
-    private $isActive;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Roles", inversedBy="users")
-     *
-     */
-    private $roles;
 
     /**
      * @ORM\ManyToMany(targetEntity="Dependencia", inversedBy="users")
@@ -165,7 +125,9 @@ class Usuarios implements AdvancedUserInterface, \Serializable
 
 
     public function __construct(){
-        $this->roles = new ArrayCollection();
+
+        parent::__construct();
+
         $this->dependencia = new ArrayCollection();
         $this->ssocial = new ArrayCollection();
         $this->remer = new ArrayCollection();
@@ -188,29 +150,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set username
-     *
-     * @param string $username
-     * @return Usuarios
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
     }
 
     /**
@@ -282,74 +221,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
         return $this->apellidos;
     }
 
-    /**
-     * Set password
-     *
-     * @param string $password
-     * @return Usuarios
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set salt
-     *
-     * @param string $salt
-     * @return Usuarios
-     */
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
-
-        return $this;
-    }
-
-    /**
-     * Get salt
-     *
-     * @return string
-     */
-    public function getSalt()
-    {
-        return $this->salt;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     * @return Usuarios
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
 
     /**
      * Set estado
@@ -395,29 +266,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     public function getFoto()
     {
         return $this->foto;
-    }
-
-    /**
-     * Set isActive
-     *
-     * @param boolean $isActive
-     * @return Usuarios
-     */
-    public function setIsActive($isActive)
-    {
-        $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return boolean
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
     }
 
     /**
@@ -483,39 +331,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     }
 
     /**
-     * Add roles
-     *
-     * @param \Proyecto\AdminBundle\Entity\Roles $roles
-     * @return Usuarios
-     */
-    public function addRole(Roles $roles)
-    {
-        $this->roles[] = $roles;
-
-        return $this;
-    }
-
-    /**
-     * Remove roles
-     *
-     * @param \Proyecto\AdminBundle\Entity\Roles $roles
-     */
-    public function removeRole(Roles $roles)
-    {
-        $this->roles->removeElement($roles);
-    }
-
-    /**
-     * Get roles
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRoles()
-    {
-        return $this->roles;
-    }
-
-    /**
      * Add dependencia
      *
      * @param \Proyecto\AdminBundle\Entity\Dependencia $dependencia
@@ -547,38 +362,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     {
         return $this->dependencia;
     }
-
-    public function eraseCredentials(){
-    }
-
-    public function isAccountNonExpired(){
-        return true;
-    }
-
-    public function isAccountNonLocked(){
-        return true;
-    }
-
-    public function isCredentialsNonExpired() {
-        return true;
-    }
-
-    public function isEnabled() {
-        return true;
-    }
-
-    public function serialize() {
-        return serialize(array(
-            $this->id,
-        ));
-    }
-
-    public function unserialize($serialized) {
-        list(
-            $this->id,
-            )= unserialize($serialized);
-    }
-
 
 
     /**

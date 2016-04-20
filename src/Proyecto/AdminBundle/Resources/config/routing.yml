@@ -31,35 +31,6 @@ ud_admin_roles_delete:
     path: /ud/admin/roles/delete/{id}
     defaults: { _controller: AdminBundle:Roles:delete }
 
-#USUARIOS
-ud_admin_usuarios:
-    path: /ud/admin/usuarios
-    defaults: { _controller: AdminBundle:Usuarios:index }
-
-ud_admin_usuarios_show:
-    path: /ud/admin/usuarios/show/{id}
-    defaults: { _controller: AdminBundle:Usuarios:show}
-
-ud_admin_usuarios_edit:
-    path: /ud/admin/usuarios/edit/{id}
-    defaults: { _controller: AdminBundle:Usuarios:edit }
-
-ud_admin_usuarios_update:
-    path: /ud/admin/usuarios/update/{id}
-    defaults: { _controller: AdminBundle:Usuarios:update }
-
-ud_admin_usuarios_new:
-    path: /ud/admin/usuarios/new
-    defaults: { _controller: AdminBundle:Usuarios:new }
-
-ud_admin_usuarios_create:
-    path: /ud/admin/usuarios/create
-    defaults: { _controller: AdminBundle:Usuarios:create }
-
-ud_admin_usuarios_delete:
-    path: /ud/admin/usuarios/delete/{id}
-    defaults: { _controller: AdminBundle:Usuarios:delete }
-
 #DEPENDENCIAS
 ud_admin_dependencia:
     path: /ud/admin/dependencia

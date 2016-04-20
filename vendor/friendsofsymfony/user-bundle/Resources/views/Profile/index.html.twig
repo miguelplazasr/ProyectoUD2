@@ -1,0 +1,59 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="fos_user_user_index">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="page-header margin-none">
+                <h1 class="padding-none">Lista de usuarios</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Idcarnet</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <!--<th>Password</th>-->
+                        <!--<th>Salt</th>-->
+                        <th>Email</th>
+                        <th>Estado</th>
+                        <th>Foto</th>
+                        <th>Dependencia</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.getId() }}</td>
+                            <td>{{ user.getUsername() }}</td>
+                            <td>{{ user.getIdCarnet() }}</td>
+                            <td>{{ user.getNombres() }}</td>
+                            <td>{{ user.getApellidos }}</td>
+                            <td>{{ user.getEmail() }}</td>
+                            <td>{{ user.getEstado() }}</td>
+                            <td><img src="{{ asset(user.webPath) }}" width="30px" height="30px" border="0"/></td>
+                            <td>
+                                {% for depen in user.getDependencia() %}
+                                    {{ depen.nombre }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td class="actions">
+                                <a href="{{ path('fos_user_profile_showus', { 'id': user.getId() }) }}" class="btn btn-sm btn-info">Mostrar</a>
+                                <a href="{{ path('fos_user_profile_editus', { 'id': user.getId() }) }}" class="btn btn-sm btn-warning">Editar</a>
+                                {{ form_start(delete_forms[user.getId()]) }}
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este prestamo?')">Eliminar</button>
+                                {{ form_end(delete_forms[user.getId()]) }}
+                            </td>
+                            </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock fos_user_content %}

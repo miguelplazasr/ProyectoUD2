@@ -1,0 +1,66 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="container well">
+        <div class="col-lg-9">
+            <h1>{{ user.nombres }} {{ user.apellidos }}</h1>
+            <br>
+            <dl>
+                <dt>Id</dt>
+                <dd>
+                    {{ user.id }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Nombres</dt>
+                <dd>
+                    {{ user.nombres }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Apellidos</dt>
+                <dd>
+                    {{ user.apellidos }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Codigo</dt>
+                <dd>
+                    {{ user.username }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Id Carnet</dt>
+                <dd>
+                    {{ user.idCarnet }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Correo</dt>
+                <dd>
+                    {{ user.email }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Estado</dt>
+                <dd>
+                    {{ user.estado }}
+                    &nbsp;
+                </dd>
+                <br>
+                <dt>Contrase&ntildea</dt>
+                <dd>
+                    {{ user.password }}
+                    &nbsp;
+                </dd>
+                <br>
+            </dl>
+        </div>
+        <div class="col-md-3">
+            <h1>Imagen</h1>
+            <p>
+                <img src="{{ asset(user.webPath) }}" width="120px" height="150px" border="0"/>
+            </p>
+        </div>
+    </div>
+{% endblock fos_user_content %}

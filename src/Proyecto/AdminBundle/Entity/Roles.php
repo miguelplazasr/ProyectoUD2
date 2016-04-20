@@ -12,7 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Proyecto\AdminBundle\Entity\RolesRepository")
  */
-class Roles implements RoleInterface
+class Roles
 {
     /**
      * @var string
@@ -37,14 +37,6 @@ class Roles implements RoleInterface
      */
     private $role;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="Usuarios", mappedBy="roles")
-     */
-    private $users;
-
-    public function __construct(){
-        $this->users = new ArrayCollection();
-    }
 
     public function __toString(){
         return $this->getNombre();
@@ -119,36 +111,4 @@ class Roles implements RoleInterface
         return $this;
     }
 
-    /**
-     * Add users
-     *
-     * @param \Proyecto\AdminBundle\Entity\Usuarios $users
-     * @return Roles
-     */
-    public function addUser(Usuarios $users)
-    {
-        $this->users[] = $users;
-
-        return $this;
-    }
-
-    /**
-     * Remove users
-     *
-     * @param \Proyecto\AdminBundle\Entity\Usuarios $users
-     */
-    public function removeUser(Usuarios $users)
-    {
-        $this->users->removeElement($users);
-    }
-
-    /**
-     * Get users
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
 }

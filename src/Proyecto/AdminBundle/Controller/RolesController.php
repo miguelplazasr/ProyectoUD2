@@ -200,7 +200,7 @@ class RolesController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ud_admin_roles_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ud_admin_roles_show', array('id' => $id)));
         }
 
         return array(

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="fos_user_profile_show" path="/" methods="GET">
+        <default key="_controller">FOSUserBundle:Profile:show</default>
+    </route>
+
+    <route id="fos_user_profile_edit" path="/edit" methods="GET POST">
+        <default key="_controller">FOSUserBundle:Profile:edit</default>
+    </route>
+
+    <route id="fos_user_profile_index" path="/index" methods="GET">
+        <default key="_controller">FOSUserBundle:Profile:index</default>
+    </route>
+
+    <route id="fos_user_profile_showus" path="/show/{id}" methods="GET">
+        <default key="_controller">FOSUserBundle:Profile:showUs</default>
+    </route>
+
+    <route id="fos_user_profile_editus" path="/editus/{id}" methods="GET">
+        <default key="_controller">FOSUserBundle:Profile:editUs</default>
+    </route>
+
+    <route id="fos_user_profile_updateus" path="/update/{id}" methods="PUT">
+        <default key="_controller">FOSUserBundle:Profile:updateUs</default>
+    </route>
+
+    <route id="fos_user_profile_deleteus" path="/delete/{id}" methods="DELETE">
+        <default key="_controller">FOSUserBundle:Profile:deleteUs</default>
+    </route>
+</routes>

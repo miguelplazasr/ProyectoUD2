@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <div class="col-lg-9">
+        <h1>Usuario {{ user.nombres }} {{ user.apellidos }}</h1>
+        <br>
+        <dl>
+            <dt>{{ 'profile.show.username'|trans }} </dt>
+            <dd>
+                {{ user.username }}
+                &nbsp;
+            </dd>
+            <br>
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+            <p>Nombres; {{ user.nombres }}</p>
+        </dl>
+    </div>
+    <div class="col-md-3">
+        <p><img src="{{ asset(user.webPath) }}" width="113px" height="151px" border="0"/></p>
+    </div>
+</div>

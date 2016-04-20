@@ -28,7 +28,8 @@ class RolesType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Proyecto\AdminBundle\Entity\Roles'
+            'data_class' => 'Proyecto\AdminBundle\Entity\Roles',
+            'allow_extra_fields' => true
         ));
     }
 
