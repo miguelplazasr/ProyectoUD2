@@ -20,6 +20,7 @@ class RegistrationType extends AbstractType
             ->add('file')
             //->add('foto')
             ->add('dependencia')
+            ->add('groups')
         ;
     }
 

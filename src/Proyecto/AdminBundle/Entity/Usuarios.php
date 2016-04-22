@@ -123,6 +123,15 @@ class Usuarios extends BaseUser
      */
     private $mactivos;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Proyecto\AdminBundle\Entity\Grupo")
+     * @ORM\JoinTable(name="grupo_usuarios",
+     *          joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *          inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
+     *     )
+     */
+    protected $groups;
+
 
     public function __construct(){
 

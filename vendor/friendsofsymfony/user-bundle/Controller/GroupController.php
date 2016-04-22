@@ -74,6 +74,14 @@ class GroupController extends Controller
         $formFactory = $this->get('fos_user.group.form.factory');
 
         $form = $formFactory->createForm();
+        $form->add('roles', 'choice', array(
+            'choices' => $this->getExistingRoles(),
+            'data' => $group->getRoles(),
+            'label' => 'Roles',
+            'expanded' => true,
+            'multiple' => true,
+            'mapped' => true
+        ));
         $form->setData($group);
 
         $form->handleRequest($request);
@@ -120,6 +128,14 @@ class GroupController extends Controller
         $dispatcher->dispatch(FOSUserEvents::GROUP_CREATE_INITIALIZE, new GroupEvent($group, $request));
 
         $form = $formFactory->createForm();
+        $form->add('roles', 'choice', array(
+                    'choices' => $this->getExistingRoles(),
+                    'data' => $group->getRoles(),
+                    'label' => 'Roles',
+                    'expanded' => true,
+                    'multiple' => true,
+                    'mapped' => true
+        ));
         $form->setData($group);
 
         $form->handleRequest($request);
@@ -183,4 +199,18 @@ class GroupController extends Controller
 
         return $group;
     }
+
+    public function getExistingRoles()
+    {
+        $rolehierarchy = $this->container->getParameter('security.role_hierarchy.roles');
+
+        $roles = array_keys($rolehierarchy);
+
+        foreach($roles as $role){
+            $theRoles[$role] = $role;
+        }
+
+        return $theRoles;
+    }
+
 }

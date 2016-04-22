@@ -19,6 +19,14 @@
                 &nbsp;
             </dd>
             <br>
+            <dt>Roles</dt>
+            <dd>
+                {% for rol in group.getRoles %}
+                {{ rol }}<br>
+                {% endfor %}
+                &nbsp;
+            </dd>
+            <br>
         </dl>
     </div>
 </div>
