@@ -1,3 +1,7 @@
 carnet_homepage:
     path:     /ud/carnetizacion
     defaults: { _controller: CarnetBundle:Default:index }
+
+ud_carnet_inicio:
+    path:     /ud/carnet/inicio
+    defaults: { _controller: CarnetBundle:Default:carnet }

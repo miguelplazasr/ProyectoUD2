@@ -8,15 +8,15 @@ class __TwigTemplate_06504ee1f088390070d0360347c44bd9ac23ca9edc2c00896d6e5c74529
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "DeportesBundle:PrestamoDeportes:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Deportes/Default/index.html.twig", "DeportesBundle:PrestamoDeportes:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Deportes/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_06504ee1f088390070d0360347c44bd9ac23ca9edc2c00896d6e5c74529
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>Prestamo Numero: ";
         // line 7
@@ -108,11 +108,11 @@ class __TwigTemplate_06504ee1f088390070d0360347c44bd9ac23ca9edc2c00896d6e5c74529
         return array (  86 => 38,  80 => 35,  75 => 33,  63 => 24,  54 => 18,  45 => 12,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Deportes/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>Prestamo Numero: {{ entity.id }}</h1>*/
 /*             <br>*/

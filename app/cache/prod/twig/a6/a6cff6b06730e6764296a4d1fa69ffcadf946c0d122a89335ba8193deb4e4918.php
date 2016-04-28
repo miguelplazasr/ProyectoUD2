@@ -8,15 +8,15 @@ class __TwigTemplate_60cdffe97aa55c7700b071e6bebd71a68ee4e98bf57d9193eae4e1b3434
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "SalonesBundle:Salones:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("SalonesBundle:Default:index.html.twig", "SalonesBundle:Salones:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "SalonesBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_60cdffe97aa55c7700b071e6bebd71a68ee4e98bf57d9193eae4e1b3434
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>Salon: ";
         // line 7
@@ -116,11 +116,11 @@ class __TwigTemplate_60cdffe97aa55c7700b071e6bebd71a68ee4e98bf57d9193eae4e1b3434
         return array (  96 => 45,  91 => 43,  83 => 38,  75 => 33,  63 => 24,  54 => 18,  45 => 12,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends 'SalonesBundle:Default:index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>Salon: {{ entity.nombreSala }}</h1>*/
 /*             <br>*/

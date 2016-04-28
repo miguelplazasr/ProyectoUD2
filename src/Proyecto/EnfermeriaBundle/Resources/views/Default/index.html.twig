@@ -1,1 +1,35 @@
-Hello {{ name }}!
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default violet" role="navigation">
+                    <div class="navbar-header vio-nav">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="visible-xs navbar-brand">Menu Enfermeria</span>
+                    </div>
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active violeta"><a href="#">Menu</a></li>
+                            <li class="violetli"><a href="{{ path('enfermeria_homepage') }}">Inicio</a></li>
+                            <li class="violetli"><a href="{{ path('ud_enfermeria_ssocial') }}">Seguridad Social</a> </li>
+                            <li class="violetli"><a href="{{ path('ud_enfermeria_reporte') }}">Reporte</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

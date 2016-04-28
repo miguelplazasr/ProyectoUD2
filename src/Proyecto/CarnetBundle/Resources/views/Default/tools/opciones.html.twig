@@ -1,0 +1,19 @@
+{% extends '@Carnet/Default/layout.html.twig'%}
+
+{% block content -%}
+    {{ parent() }}
+    <div class="page-header">
+        <h1>Bienvenido al modulo de carnetizacion</h1>
+    </div>
+    <div class="list-group">
+        <div class="col-md-12 act-img-car">
+            <div class="img" id="carnet1">
+
+            </div>
+            <div class="enl-c">
+                <h1><a href="{{ path('carnet_homepage') }}">Carnetizacion</a></h1>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

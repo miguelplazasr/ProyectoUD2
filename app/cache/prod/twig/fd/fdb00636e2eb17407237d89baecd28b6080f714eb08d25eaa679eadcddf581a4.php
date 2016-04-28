@@ -8,15 +8,15 @@ class __TwigTemplate_261a43c93d7e209e7de1da1d4477ee84bb90235fdbb6b23b853415e8cb2
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "ActivosBundle:ElementosActivos:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Activos/Default/index.html.twig", "ActivosBundle:ElementosActivos:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Activos/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_261a43c93d7e209e7de1da1d4477ee84bb90235fdbb6b23b853415e8cb2
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>";
         // line 7
@@ -116,11 +116,11 @@ class __TwigTemplate_261a43c93d7e209e7de1da1d4477ee84bb90235fdbb6b23b853415e8cb2
         return array (  93 => 42,  87 => 39,  82 => 37,  74 => 32,  62 => 23,  53 => 17,  44 => 11,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Activos/Default/index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>{{ entity.nombre }}</h1>*/
 /*             <dl>*/

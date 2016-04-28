@@ -1,1 +1,37 @@
-Hello {{ name }}!
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default green" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="visible-xs navbar-brand">Sidebar menu</span>
+                    </div>
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active greena"><a href="#">Menu</a></li>
+                            <li class="greenli"><a href="{{ path('deportes_homepage') }}">Inicio</a></li>
+                            <li class="greenli"><a href="{{ path('ud_deportes_elementos') }}">Elementos</a> </li>
+                            <li class="greenli"><a href="{{ path('ud_deportes_inventario') }}">Stock</a></li>
+                            <li class="greenli"><a href="{{ path('ud_deportes_prestamo') }}">Prestamo</a></li>
+                            <li class="greenli"><a href="{{ path('ud_deportes_multas') }}">Multas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

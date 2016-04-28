@@ -8,15 +8,15 @@ class __TwigTemplate_8c357f452aa05980509f30d94dad65a37a38a5a49d09f29227a21b03479
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "DeportesBundle:InventarioDeportes:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Deportes/Default/index.html.twig", "DeportesBundle:InventarioDeportes:edit.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Deportes/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,11 @@ class __TwigTemplate_8c357f452aa05980509f30d94dad65a37a38a5a49d09f29227a21b03479
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div class=\"main container\">
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         <div class=\"row well\">
             <div class=\"col-md-6\">
                 <h1>Editar Inventario</h1>
@@ -105,7 +106,6 @@ class __TwigTemplate_8c357f452aa05980509f30d94dad65a37a38a5a49d09f29227a21b03479
                 </p>
             </div>
         </div>
-    </div>
 ";
     }
 
@@ -121,13 +121,13 @@ class __TwigTemplate_8c357f452aa05980509f30d94dad65a37a38a5a49d09f29227a21b03479
 
     public function getDebugInfo()
     {
-        return array (  101 => 33,  95 => 30,  90 => 28,  85 => 26,  81 => 25,  76 => 23,  72 => 22,  66 => 19,  62 => 18,  56 => 15,  52 => 14,  46 => 11,  42 => 10,  37 => 8,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  102 => 33,  96 => 30,  91 => 28,  86 => 26,  82 => 25,  77 => 23,  73 => 22,  67 => 19,  63 => 18,  57 => 15,  53 => 14,  47 => 11,  43 => 10,  38 => 8,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Deportes/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
-/*     <div class="main container">*/
+/* {% block content -%}*/
+/*     {{ parent() }}*/
 /*         <div class="row well">*/
 /*             <div class="col-md-6">*/
 /*                 <h1>Editar Inventario</h1>*/
@@ -162,7 +162,6 @@ class __TwigTemplate_8c357f452aa05980509f30d94dad65a37a38a5a49d09f29227a21b03479
 /*                 </p>*/
 /*             </div>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
 /* */
 /* */

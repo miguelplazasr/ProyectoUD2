@@ -1,7 +1,7 @@
-{% extends 'layout.html.twig' %}
+{% extends '@Activos/Default/index.html.twig' %}
 
-{% block body -%}
-    <div class="container">
+{% block content -%}
+    {{ parent() }}
         <div class="col-md-12">
             <div class="page-header">
                 <h1>Stock de elementos</h1>
@@ -40,5 +40,4 @@
                 Nuevo Stock
             </a>
         </div>
-    </div>
 {% endblock %}

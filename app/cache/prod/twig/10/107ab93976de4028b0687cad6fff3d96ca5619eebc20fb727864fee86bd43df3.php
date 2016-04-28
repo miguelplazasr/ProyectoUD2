@@ -8,15 +8,15 @@ class __TwigTemplate_8093a0f75ed8a5d63516bfdc8dad1166a68a8857ff06bb662d3d20fdc92
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "SalonesBundle:Salones:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("SalonesBundle:Default:index.html.twig", "SalonesBundle:Salones:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "SalonesBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,11 +25,10 @@ class __TwigTemplate_8093a0f75ed8a5d63516bfdc8dad1166a68a8857ff06bb662d3d20fdc92
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 5
-        echo "<div class=\"container\">
-    <div class=\"col-md-12\">
+        echo "<div class=\"col-md-12\">
         <div class=\"page-header\">
             <h1>Lista de Salones</h1>
         </div>
@@ -45,34 +44,34 @@ class __TwigTemplate_8093a0f75ed8a5d63516bfdc8dad1166a68a8857ff06bb662d3d20fdc92
                 </thead>
                 <tbody>
                 ";
-        // line 21
+        // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 22
+            // line 21
             echo "                    <tr>
                         <td><a href=\"";
-            // line 23
+            // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_salones_salon_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                         <td>";
-            // line 24
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombreSala", array()), "html", null, true);
             echo "</td>
                         <td>";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
             echo "</td>
                         <td class=\"actions\">
                                 <a href=\"";
-            // line 27
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_salones_salon_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">Mostrar</a>
                                 <br>
                                 <a href=\"";
-            // line 29
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_salones_salon_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-sm btn-warning\">Editar</a>
                                 <br>
@@ -83,21 +82,20 @@ class __TwigTemplate_8093a0f75ed8a5d63516bfdc8dad1166a68a8857ff06bb662d3d20fdc92
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 33
         echo "                </tbody>
             </table>
         </div>
                 <p>
                     <a href=\"";
-        // line 38
+        // line 37
         echo $this->env->getExtension('routing')->getPath("ud_salones_salon_new");
         echo "\" class=\"btn btn-sm btn-link\">
                         Nuevo salon
                     </a>
                 </p>
         </div>
-    </div>
-    ";
+";
     }
 
     public function getTemplateName()
@@ -112,14 +110,13 @@ class __TwigTemplate_8093a0f75ed8a5d63516bfdc8dad1166a68a8857ff06bb662d3d20fdc92
 
     public function getDebugInfo()
     {
-        return array (  93 => 38,  87 => 34,  76 => 29,  71 => 27,  66 => 25,  62 => 24,  56 => 23,  53 => 22,  49 => 21,  31 => 5,  28 => 3,  11 => 1,);
+        return array (  92 => 37,  86 => 33,  75 => 28,  70 => 26,  65 => 24,  61 => 23,  55 => 22,  52 => 21,  48 => 20,  31 => 5,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends 'SalonesBundle:Default:index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /* */
-/* <div class="container">*/
 /*     <div class="col-md-12">*/
 /*         <div class="page-header">*/
 /*             <h1>Lista de Salones</h1>*/
@@ -157,6 +154,5 @@ class __TwigTemplate_8093a0f75ed8a5d63516bfdc8dad1166a68a8857ff06bb662d3d20fdc92
 /*                     </a>*/
 /*                 </p>*/
 /*         </div>*/
-/*     </div>*/
-/*     {% endblock %}*/
+/* {% endblock %}*/
 /* */

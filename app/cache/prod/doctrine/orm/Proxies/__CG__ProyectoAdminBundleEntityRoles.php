@@ -64,10 +64,10 @@ class Roles extends \Proyecto\AdminBundle\Entity\Roles implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'nombre', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'role', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'users');
+            return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'nombre', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'role');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'nombre', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'role', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'users');
+        return array('__isInitialized__', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'id', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'nombre', '' . "\0" . 'Proyecto\\AdminBundle\\Entity\\Roles' . "\0" . 'role');
     }
 
     /**
@@ -252,39 +252,6 @@ class Roles extends \Proyecto\AdminBundle\Entity\Roles implements \Doctrine\ORM\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', array($id));
 
         return parent::setId($id);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addUser(\Proyecto\AdminBundle\Entity\Usuarios $users)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addUser', array($users));
-
-        return parent::addUser($users);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeUser(\Proyecto\AdminBundle\Entity\Usuarios $users)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUser', array($users));
-
-        return parent::removeUser($users);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getUsers()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsers', array());
-
-        return parent::getUsers();
     }
 
 }

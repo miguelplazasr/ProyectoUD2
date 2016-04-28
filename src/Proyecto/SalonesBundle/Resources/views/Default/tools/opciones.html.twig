@@ -1,0 +1,29 @@
+{% extends 'SalonesBundle:Default:index.html.twig'%}
+
+{% block content -%}
+    {{ parent() }}
+    <div class="page-header">
+        <h1>Bienvenido al modulo de salones</h1>
+    </div>
+    <div class="list-group">
+        <div class="col-md-12">
+            <div class="col-md-6 act-img-sal">
+                <div class="img" id="salon1">
+
+                </div>
+                <div class="enl-s">
+                    <h1><a href="{{ path('ud_salones_salon') }}">Salones</a></h1>
+                </div>
+            </div>
+
+            <div class="col-md-6 act-img-sal">
+                <div class="img" id="salon2">
+
+                </div>
+                <div class="enl-s">
+                    <h1><a href="{{ path('ud_salones_prestamo') }}">Prestamo</a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

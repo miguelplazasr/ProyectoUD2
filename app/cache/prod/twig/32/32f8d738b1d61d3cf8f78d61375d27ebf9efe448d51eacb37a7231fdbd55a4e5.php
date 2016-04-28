@@ -67,7 +67,7 @@ class __TwigTemplate_dd1a1f4404ab321ec78920a30cee9b6e9d2dd1595001226ca2eebac2baf
         echo "
                     ";
         // line 22
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "role", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite un rol")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "role", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite un rol", "value" => "ROLE_", "maxlength" => 10)));
         echo "
                 </div>
 
@@ -127,7 +127,7 @@ class __TwigTemplate_dd1a1f4404ab321ec78920a30cee9b6e9d2dd1595001226ca2eebac2baf
 /*                 </div>*/
 /*                 <div class="form-group">*/
 /*                     {{ form_label(form.role) }}*/
-/*                     {{ form_widget(form.role, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite un rol'}}) }}*/
+/*                     {{ form_widget(form.role, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite un rol', 'value' : 'ROLE_', 'maxlength' : 10 }}) }}*/
 /*                 </div>*/
 /* */
 /*                 <p>{{ form_widget(form.submit, { 'label': 'Agregar Rol', 'attr' : {'class' : 'btn btn-success' }}) }}</p>*/

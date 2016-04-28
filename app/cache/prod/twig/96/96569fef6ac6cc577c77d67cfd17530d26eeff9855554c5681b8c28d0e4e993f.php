@@ -8,9 +8,9 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "SalonesBundle:PrestamoSalon:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("SalonesBundle:Default:index.html.twig", "SalonesBundle:PrestamoSalon:edit.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
             'stylesheets' => array($this, 'block_stylesheets'),
             'javascripts' => array($this, 'block_javascripts'),
         );
@@ -18,7 +18,7 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "SalonesBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -27,90 +27,89 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"main container\">
         <div class=\"row well\">
             <div class=\"col-md-6\">
                 <div class=\"page-header\">
                     <h1>Editar un salon</h1>
                 </div>
                 ";
-        // line 11
+        // line 10
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : null), 'form_start', array("attr" => array("id" => ((array_key_exists("id", $context)) ? (_twig_default_filter((isset($context["id"]) ? $context["id"] : null), "new-form")) : ("new-form")))));
         echo "
                 <label for=\"fecha\">Fecha</label>
                 <input type=\"text\" class=\"date form-control\" placeholder=\"asigne una fecha\" name=\"fecha\" id=\"fecha\" value=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, (isset($context["dia"]) ? $context["dia"] : null), "html", null, true);
         echo "\">
                 <br>
                 <div class=\"form-group\">
                     ";
-        // line 16
+        // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "horario", array()), 'label');
         echo "
                     ";
-        // line 17
+        // line 16
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "horario", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite id")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 20
+        // line 19
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "observaciones", array()), 'label');
         echo "
                     ";
-        // line 21
+        // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "observaciones", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite nombre")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 24
+        // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "sala", array()), 'label');
         echo "
                     ";
-        // line 25
+        // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "sala", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 28
+        // line 27
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "users", array()), 'label');
         echo "
                     ";
-        // line 29
+        // line 28
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "users", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
                 </div>
 
                 <p>";
-        // line 32
+        // line 31
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "submit", array()), 'widget', array("label" => "Editar prestamo", "attr" => array("class" => "btn btn-success")));
         echo "</p>
                 ";
-        // line 33
+        // line 32
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : null), 'form_end');
         echo "
                 <p>
                     ";
-        // line 35
+        // line 34
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : null), 'form_start');
         echo "
                     <button type=\"submit\" class=\"btn btn-sm btn-danger\">Eliminar</button>
                     ";
-        // line 37
+        // line 36
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : null), 'form_end');
         echo "
                 </p>
                 <p>
                     <a href=\"";
-        // line 40
+        // line 39
         echo $this->env->getExtension('routing')->getPath("ud_salones_prestamo");
         echo "\" class=\"btn btn-sm btn-link\">
                         Volver
@@ -118,37 +117,36 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
                 </p>
             </div>
         </div>
-    </div>
 ";
     }
 
-    // line 49
+    // line 47
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 50
+        // line 48
         echo "    ";
         $this->displayParentBlock("stylesheets", $context, $blocks);
         echo "
     <link rel=\"stylesheet\" href=\"";
-        // line 51
+        // line 49
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/css/jquery-ui.css"), "html", null, true);
         echo "\">
 ";
     }
 
-    // line 54
+    // line 52
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 55
+        // line 53
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 56
+        // line 54
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/js/jquery-1.10.2.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 57
+        // line 55
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("public/js/jquery-ui.js"), "html", null, true);
         echo "\"></script>
     <script>
@@ -194,14 +192,13 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
 
     public function getDebugInfo()
     {
-        return array (  152 => 57,  148 => 56,  143 => 55,  140 => 54,  134 => 51,  129 => 50,  126 => 49,  114 => 40,  108 => 37,  103 => 35,  98 => 33,  94 => 32,  88 => 29,  84 => 28,  78 => 25,  74 => 24,  68 => 21,  64 => 20,  58 => 17,  54 => 16,  48 => 13,  43 => 11,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  150 => 55,  146 => 54,  141 => 53,  138 => 52,  132 => 49,  127 => 48,  124 => 47,  113 => 39,  107 => 36,  102 => 34,  97 => 32,  93 => 31,  87 => 28,  83 => 27,  77 => 24,  73 => 23,  67 => 20,  63 => 19,  57 => 16,  53 => 15,  47 => 12,  42 => 10,  33 => 4,  30 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends 'SalonesBundle:Default:index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="main container">*/
 /*         <div class="row well">*/
 /*             <div class="col-md-6">*/
 /*                 <div class="page-header">*/
@@ -242,7 +239,6 @@ class __TwigTemplate_3a4bee6e041988b67e03e99647099fa7606f4ec83b45af4d11b6a59bffb
 /*                 </p>*/
 /*             </div>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
 /* */
 /* {% block stylesheets %}*/

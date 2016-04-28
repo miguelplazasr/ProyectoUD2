@@ -8,16 +8,16 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "ActivosBundle:PrestamoActivo:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Activos/Default/index.html.twig", "ActivosBundle:PrestamoActivo:new.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Activos/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -26,12 +26,11 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"main container\">
         <div class=\"row well\">
             <div class=\"col-md-6\">
                 <div class=\"page-header\">
@@ -43,23 +42,23 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
                         <input id=\"searchbox\" type=\"text\" placeholder=\"Ingrese el id del usuario\" class=\"form-control\" required/>
                         <br>
                         <input type=\"submit\" value=\"";
-        // line 16
+        // line 15
         echo "Buscar Usuario";
         echo "\" class=\"btn btn-default btn-search\" />
                     </form>
                 </div>
                 ";
-        // line 19
+        // line 18
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form_start', array("attr" => array("id" => ((array_key_exists("id", $context)) ? (_twig_default_filter((isset($context["id"]) ? $context["id"] : null), "new-form")) : ("new-form")))));
         echo "
                 <div id=\"elementos\">
                     <div class=\"form-group\">
                         ";
-        // line 22
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "sactivo", array()), 'label');
         echo "
                         ";
-        // line 23
+        // line 22
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "sactivo", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
                     </div>
@@ -73,58 +72,57 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
                 <div id=\"form-rest\">
                     <div class=\"form-group\">
                         ";
-        // line 34
+        // line 33
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "users", array()), 'label');
         echo "
                         ";
-        // line 35
+        // line 34
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "users", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
                     </div>
                     <div class=\"form-group\">
                         ";
-        // line 38
+        // line 37
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "cantidad", array()), 'label');
         echo "
                         ";
-        // line 39
+        // line 38
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "cantidad", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite un cantidad", "min" => 0)));
         echo "
                     </div>
                     <p>";
-        // line 41
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "submit", array()), 'widget', array("label" => "Agregar Prestamo", "attr" => array("class" => "btn btn-success")));
         echo "</p>
                 </div>
                 ";
-        // line 43
+        // line 42
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form_end');
         echo "
                 <a href=\"";
-        // line 44
+        // line 43
         echo $this->env->getExtension('routing')->getPath("ud_activos_prestamo");
         echo "\" class=\"btn btn-bg btn-link\">
                     Volver
                 </a>
             </div>
         </div>
-    </div>
 ";
     }
 
-    // line 52
+    // line 50
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 53
+        // line 51
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 54
+        // line 52
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/activos/js/searchcantidad.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 55
+        // line 53
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/activos/js/searchuser.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -142,14 +140,13 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
 
     public function getDebugInfo()
     {
-        return array (  128 => 55,  124 => 54,  119 => 53,  116 => 52,  105 => 44,  101 => 43,  96 => 41,  91 => 39,  87 => 38,  81 => 35,  77 => 34,  63 => 23,  59 => 22,  53 => 19,  47 => 16,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  126 => 53,  122 => 52,  117 => 51,  114 => 50,  104 => 43,  100 => 42,  95 => 40,  90 => 38,  86 => 37,  80 => 34,  76 => 33,  62 => 22,  58 => 21,  52 => 18,  46 => 15,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Activos/Default/index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="main container">*/
 /*         <div class="row well">*/
 /*             <div class="col-md-6">*/
 /*                 <div class="page-header">*/
@@ -193,7 +190,6 @@ class __TwigTemplate_b29a0f9599440f3defb2191399cafa045b9e70d97bba98ea6d34489fda3
 /*                 </a>*/
 /*             </div>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
 /* */
 /* {% block javascripts %}*/

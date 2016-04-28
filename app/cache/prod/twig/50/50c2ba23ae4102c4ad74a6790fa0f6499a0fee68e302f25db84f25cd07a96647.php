@@ -8,16 +8,16 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "EnfermeriaBundle:ReporteEmergencia:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Enfermeria/Default/index.html.twig", "EnfermeriaBundle:ReporteEmergencia:new.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Enfermeria/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -26,15 +26,14 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
         echo "    ";
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
     <div id=\"warning\">
     </div>
-    <div class=\"main container\">
         <div class=\"row well\">
             <div class=\"col-md-6\">
                 <div class=\"page-header\">
@@ -46,7 +45,7 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
                         <input id=\"searchbox\" type=\"text\" placeholder=\"Ingrese el id del usuario\" class=\"form-control\" required/>
                         <br>
                         <input type=\"submit\" value=\"";
-        // line 18
+        // line 17
         echo "Buscar Usuario";
         echo "\" class=\"btn btn-default btn-search\" />
                     </form>
@@ -55,7 +54,7 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
                 <div class=\"searchx\">
                     <form id=\"searchxml-form\">
                         <input type=\"submit\" value=\"";
-        // line 24
+        // line 23
         echo "Buscar un tag";
         echo "\" class=\"btn btn-default btn-xml\" />
                     </form>
@@ -66,39 +65,39 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
                 </div>
                 <br>
                 ";
-        // line 32
+        // line 31
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form_start', array("attr" => array("novalidate" => "novalidate", "id" => ((array_key_exists("id", $context)) ? (_twig_default_filter((isset($context["id"]) ? $context["id"] : null), "new-form")) : ("new-form")))));
         echo "
 
                 <div class=\"form-group\">
                     ";
-        // line 35
+        // line 34
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "detalle", array()), 'label');
         echo "
                     ";
-        // line 36
+        // line 35
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "detalle", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite detalles")));
         echo "
                 </div>
 
                 <div class=\"form-group\">
                     ";
-        // line 40
+        // line 39
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "users", array()), 'label');
         echo "
                     ";
-        // line 41
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "users", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Seleccione un usuario")));
         echo "
                 </div>
 
                 <p>";
-        // line 44
+        // line 43
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "submit", array()), 'widget', array("label" => "Crear Reporte", "attr" => array("class" => "btn btn-success")));
         echo "</p>
 
                 ";
-        // line 46
+        // line 45
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form_end');
         echo "
             </div>
@@ -106,31 +105,29 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
         <ul>
             <li>
                 <a href=\"";
-        // line 51
+        // line 50
         echo $this->env->getExtension('routing')->getPath("ud_enfermeria_reporte");
         echo "\">
                     volver
                 </a>
             </li>
         </ul>
-    </div>
-
 ";
     }
 
-    // line 60
+    // line 57
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 61
+        // line 58
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 62
+        // line 59
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/enfermeria/js/searchuser.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 63
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/enfermeria/js/xml.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -148,16 +145,15 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
 
     public function getDebugInfo()
     {
-        return array (  134 => 63,  130 => 62,  125 => 61,  122 => 60,  110 => 51,  102 => 46,  97 => 44,  91 => 41,  87 => 40,  80 => 36,  76 => 35,  70 => 32,  59 => 24,  50 => 18,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  131 => 60,  127 => 59,  122 => 58,  119 => 57,  109 => 50,  101 => 45,  96 => 43,  90 => 40,  86 => 39,  79 => 35,  75 => 34,  69 => 31,  58 => 23,  49 => 17,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends '@Enfermeria/Default/index.html.twig'%}*/
 /* */
-/* {% block body %}*/
+/* {% block content %}*/
 /*     {{ parent() }}*/
 /*     <div id="warning">*/
 /*     </div>*/
-/*     <div class="main container">*/
 /*         <div class="row well">*/
 /*             <div class="col-md-6">*/
 /*                 <div class="page-header">*/
@@ -206,8 +202,6 @@ class __TwigTemplate_3fdb637b880f06f3fd9247399bcf79afd565a6e535ab0908ddfdaa75005
 /*                 </a>*/
 /*             </li>*/
 /*         </ul>*/
-/*     </div>*/
-/* */
 /* {% endblock %}*/
 /* */
 /* {% block javascripts %}*/

@@ -1,8 +1,8 @@
-{% extends 'layout.html.twig' %}
+{% extends 'SeguridadBundle:Default:index.html.twig'%}
 
-{% block body -%}
+{% block content -%}
     {{ parent() }}
-<div class="container well">
+<div class="row well">
     <div class="col-lg-9">
         <h1>Invitado: {{ entity.nombres }} {{ entity.apellidos }}</h1>
         <br>

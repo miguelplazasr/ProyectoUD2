@@ -1,0 +1,3 @@
+portada_homepage:
+    path:     /ud/inicio
+    defaults: { _controller: PortadaBundle:Default:index }

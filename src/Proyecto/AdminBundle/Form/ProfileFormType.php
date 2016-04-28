@@ -19,6 +19,7 @@ class ProfileFormType extends AbstractType
             ->add('estado')
             ->add('file')
             //->add('foto')
+            ->add('enabled')
             ->add('dependencia')
             ->add('groups')
         ;

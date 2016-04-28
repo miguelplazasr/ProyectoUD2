@@ -1,0 +1,40 @@
+{% extends ('@Admin/Default/index.html.twig') %}
+
+{% block content -%}
+    {{ parent()}}
+    <div class="page-header">
+        <h1>Bienvenido al modulo de administracion</h1>
+    </div>
+    <div class="list-group">
+        <div class="col-md-12">
+            <div class="col-md-4 act-img-adm">
+                <div class="img" id="admin1">
+
+                </div>
+                <div class="enl-a">
+                    <h1><a href="{{ path('fos_user_profile_index') }}">Usuarios</a></h1>
+                </div>
+            </div>
+
+            <div class="col-md-4 act-img-adm">
+                <div class="img" id="admin2">
+
+                </div>
+                <div class="enl-a">
+                    <h1><a href="{{ path('fos_user_group_list') }}">Grupos</a></h1>
+                </div>
+            </div>
+
+            <div class="col-md-4 act-img-adm">
+                <div class="img" id="admin3">
+
+                </div>
+                <div class="enl-a">
+                    <h1><a href="{{ path('ud_admin_dependencia') }}">Dependencia</a></h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

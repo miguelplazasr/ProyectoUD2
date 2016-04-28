@@ -1,5 +1,5 @@
 seguridad_homepage:
-    path:     /hello/{name}
+    path:     /ud/seguridad/inicio
     defaults: { _controller: SeguridadBundle:Default:index }
 
 ud_seguridad_invitados:

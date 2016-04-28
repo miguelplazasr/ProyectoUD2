@@ -8,15 +8,15 @@ class __TwigTemplate_99d870e1c54906096c9f923f586cc340749bd95882721c5bf457d6f9e92
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "EnfermeriaBundle:ReporteEmergencia:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Enfermeria/Default/index.html.twig", "EnfermeriaBundle:ReporteEmergencia:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Enfermeria/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,10 @@ class __TwigTemplate_99d870e1c54906096c9f923f586cc340749bd95882721c5bf457d6f9e92
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div class=\"container well\">
+        echo "<div class=\"row well\">
         <div class=\"col-md-9\">
             <h1>Reporte Numero: ";
         // line 6
@@ -75,10 +75,10 @@ class __TwigTemplate_99d870e1c54906096c9f923f586cc340749bd95882721c5bf457d6f9e92
         return array (  54 => 16,  49 => 14,  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends '@Enfermeria/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
-/*     <div class="container well">*/
+/* {% block content -%}*/
+/*     <div class="row well">*/
 /*         <div class="col-md-9">*/
 /*             <h1>Reporte Numero: {{ entity.id }}</h1>*/
 /*             <br>*/

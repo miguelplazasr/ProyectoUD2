@@ -1,0 +1,50 @@
+{% extends '@Deportes/Default/index.html.twig'%}
+
+{% block content -%}
+    {{ parent() }}
+    <div class="page-header">
+        <h1>Bienvenido al modulo de deportes</h1>
+    </div>
+    <div class="list-group">
+        <div class="col-md-12">
+            <div class="col-md-6 act-img-dep">
+                <div class="img" id="deportes1">
+
+                </div>
+                <div class="enl-d">
+                    <h1><a href="{{ path('ud_deportes_elementos') }}">Elementos</a></h1>
+                </div>
+            </div>
+
+            <div class="col-md-6 act-img-dep">
+                <div class="img" id="deportes2">
+
+                </div>
+                <div class="enl-d">
+                    <h1><a href="{{ path('ud_deportes_inventario') }}">Stock</a></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6 act-img-dep">
+                <div class="img" id="deportes3">
+
+                </div>
+                <div class="enl-d">
+                    <h1><a href="{{ path('ud_deportes_prestamo') }}">Prestamo</a></h1>
+                </div>
+            </div>
+
+            <div class="col-md-6 act-img-dep">
+                <div class="img" id="deportes4">
+
+                </div>
+                <div class="enl-d">
+                    <h1><a href="{{ path('ud_deportes_multas') }}">Multas</a></h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

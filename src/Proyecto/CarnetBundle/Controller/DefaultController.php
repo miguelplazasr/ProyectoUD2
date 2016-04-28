@@ -17,6 +17,10 @@ class DefaultController extends Controller
         return $this->render('CarnetBundle:Default:index.html.twig');
     }
 
+    public function carnetAction(){
+        return $this->render('CarnetBundle:Default/tools:opciones.html.twig');
+    }
+
     /**
      * @Route("/search/{id}" , name="ud_carnet_search", options={"expose"=true})
      * @Method("GET")

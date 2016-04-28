@@ -1,8 +1,7 @@
-{% extends ('layout.html.twig') %}
+{% extends ('@Admin/Default/index.html.twig') %}
 
-{% block body -%}
+{% block content -%}
     {{ parent() }}
-    <div class="main container">
         <div class="row well">
             <div class="col-md-6">
                 <div class="page-header">
@@ -24,5 +23,4 @@
                 </a>
             </div>
         </div>
-    </div>
 {% endblock %}

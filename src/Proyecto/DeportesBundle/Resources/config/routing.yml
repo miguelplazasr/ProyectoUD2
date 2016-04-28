@@ -1,5 +1,5 @@
 deportes_homepage:
-    path:     /hello/{name}
+    path:     ud/deportes/inicio
     defaults: { _controller: DeportesBundle:Default:index }
 
 #elementos

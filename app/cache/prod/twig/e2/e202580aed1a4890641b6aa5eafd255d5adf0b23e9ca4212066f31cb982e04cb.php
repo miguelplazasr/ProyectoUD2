@@ -8,15 +8,15 @@ class __TwigTemplate_6263ec7a934bf8471db5bd18d63f083bb045f02ca45f08b12091513d4e3
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "DeportesBundle:ElementosDeportes:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Deportes/Default/index.html.twig", "DeportesBundle:ElementosDeportes:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Deportes/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_6263ec7a934bf8471db5bd18d63f083bb045f02ca45f08b12091513d4e3
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>";
         // line 7
@@ -120,11 +120,11 @@ class __TwigTemplate_6263ec7a934bf8471db5bd18d63f083bb045f02ca45f08b12091513d4e3
         return array (  97 => 46,  91 => 43,  86 => 41,  78 => 36,  65 => 26,  55 => 19,  45 => 12,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Deportes/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content-%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>{{ entity.nombre }}</h1>*/
 /*             <br>*/

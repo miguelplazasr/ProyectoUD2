@@ -30,7 +30,15 @@ security:
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/^, role: ROLE_SUPER_ADMIN }
-        - { path: ^/deportes/^, role: ROLE_DEPOR}
+        - { path: ^/ud/inicio, role: ROLE_SUPER_ADMIN}
+        - { path: ^/ud/admin/register/confirmed, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/ud/admin/resetting/*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/ud/admin/profile/change-password, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/ud/admin/register, role: ROLE_SUPER_ADMIN }
+        - { path: ^/resetting, role: ROLE_ADMIN }
+        - { path: ^/ud/admin/*, role: ROLE_SUPER_ADMIN }
+        - { path: ^/ud/deportes/*, role: ROLE_DEPOR }
+        - { path: ^/ud/carnetizacion/*, role: ROLE_CARNE }
+        - { path: ^/ud/activos/*, role: ROLE_ACTIV }
+        - { path: ^/ud/enfermeria/*, roles: ROLE_ENFER }
+        - { path: ^/ud/salones/*, role: ROLE_SALAS }

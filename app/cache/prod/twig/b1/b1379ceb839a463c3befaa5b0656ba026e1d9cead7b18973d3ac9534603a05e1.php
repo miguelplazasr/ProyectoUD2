@@ -8,15 +8,15 @@ class __TwigTemplate_541d25553fbe8c3a803d99cbc9a1db4fcaa4e48ba87bac940e285a7e9ca
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "ActivosBundle:PrestamoActivo:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Activos/Default/index.html.twig", "ActivosBundle:PrestamoActivo:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Activos/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_541d25553fbe8c3a803d99cbc9a1db4fcaa4e48ba87bac940e285a7e9ca
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>Prestamo Numero: ";
         // line 7
@@ -140,11 +140,11 @@ class __TwigTemplate_541d25553fbe8c3a803d99cbc9a1db4fcaa4e48ba87bac940e285a7e9ca
         return array (  117 => 60,  111 => 57,  106 => 55,  89 => 41,  80 => 35,  71 => 29,  62 => 23,  53 => 17,  44 => 11,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Activos/Default/index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>Prestamo Numero: {{ entity.id }}</h1>*/
 /*             <dl>*/

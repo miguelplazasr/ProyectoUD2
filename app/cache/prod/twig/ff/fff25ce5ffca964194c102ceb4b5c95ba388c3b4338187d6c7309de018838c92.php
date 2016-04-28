@@ -73,7 +73,7 @@ class __TwigTemplate_fea8a1becf7fd96948b451c4721f1176a31c4e5d42bfbe337469db70b98
 
                 <p>";
         // line 25
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "submit", array()), 'widget', array("label" => "Agregar Rol", "attr" => array("class" => "btn btn-success")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : null), "submit", array()), 'widget', array("label" => "Editar Rol", "attr" => array("class" => "btn btn-success")));
         echo "</p>
                 ";
         // line 26
@@ -143,7 +143,7 @@ class __TwigTemplate_fea8a1becf7fd96948b451c4721f1176a31c4e5d42bfbe337469db70b98
 /*                     {{ form_widget(edit_form.role, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Digite un rol'}}) }}*/
 /*                 </div>*/
 /* */
-/*                 <p>{{ form_widget(edit_form.submit, { 'label': 'Agregar Rol', 'attr' : {'class' : 'btn btn-success' }}) }}</p>*/
+/*                 <p>{{ form_widget(edit_form.submit, { 'label': 'Editar Rol', 'attr' : {'class' : 'btn btn-success' }}) }}</p>*/
 /*                 {{ form_end(edit_form) }}*/
 /*                 <p>*/
 /*                     {{ form_start(delete_form) }}*/

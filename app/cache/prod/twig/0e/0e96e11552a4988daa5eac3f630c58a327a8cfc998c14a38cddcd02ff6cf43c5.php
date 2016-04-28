@@ -8,15 +8,15 @@ class __TwigTemplate_d4bd644884200bc09348dc609741f36178b1ba68fd8667e74c5157e563b
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "SalonesBundle:PrestamoSalon:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("SalonesBundle:Default:index.html.twig", "SalonesBundle:PrestamoSalon:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "SalonesBundle:Default:index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_d4bd644884200bc09348dc609741f36178b1ba68fd8667e74c5157e563b
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>Prestamo Numero: ";
         // line 7
@@ -143,11 +143,11 @@ class __TwigTemplate_d4bd644884200bc09348dc609741f36178b1ba68fd8667e74c5157e563b
         return array (  123 => 63,  118 => 61,  110 => 56,  102 => 51,  90 => 42,  81 => 36,  72 => 30,  63 => 24,  54 => 18,  45 => 12,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends 'SalonesBundle:Default:index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>Prestamo Numero: {{ entity.id }}</h1>*/
 /*             <br>*/

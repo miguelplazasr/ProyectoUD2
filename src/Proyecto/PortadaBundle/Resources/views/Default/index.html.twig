@@ -1,0 +1,85 @@
+{% extends 'layout.html.twig' %}
+
+{% block body -%}
+    {{ parent() }}
+    <div class="header tit-ini">
+        <h1>BIENVENIDOS SERVICIOS UD</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-4 bloque">
+                <div class="img" id="adm">
+
+                </div>
+                <div class="enl-p" id="en-ad">
+                    <a href="{{ path('admin_homepage') }}">Administracion</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4 bloque">
+                <div class="img" id="act">
+
+                </div>
+                <div class="enl-p" id="en-ac">
+                    <a href="{{ path('activos_homepage') }}">Activos</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-12">
+            <div class="col-md-4 bloque">
+                <div class="img" id="enf">
+
+                </div>
+                <div class="enl-p" id="en-ef">
+                    <a href="{{ path('enfermeria_homepage') }}">Enfermeria</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 bloque">
+            </div>
+
+            <div class="col-md-4 bloque">
+                <div class="img" id="sal">
+
+                </div>
+                <div class="enl-p" id="en-sa">
+                    <a href="{{ path('salones_homepage') }}">Salones</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-12">
+            <div class="col-md-4 bloque">
+                <div class="img2" id="dep">
+
+                </div>
+                <div class="enl-p" id="en-de">
+                    <a href="{{ path('deportes_homepage') }}">Deportes</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 bloque">
+                <div class="img2" id="ser">
+
+                </div>
+                <div class="enl-p" id="en-se">
+                    <a href="{{ path('seguridad_homepage') }}">Seguridad</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 bloque">
+                <div class="img2" id="car">
+                </div>
+                <div class="enl-p" id="en-ca">
+                    <a href="{{ path('ud_carnet_inicio') }}">Carnetizacion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

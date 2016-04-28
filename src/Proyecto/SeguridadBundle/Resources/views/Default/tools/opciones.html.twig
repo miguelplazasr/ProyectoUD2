@@ -1,0 +1,29 @@
+{% extends 'SeguridadBundle:Default:index.html.twig'%}
+
+{% block content -%}
+    {{ parent() }}
+    <div class="page-header">
+        <h1>Bienvenido al modulo de seguridad</h1>
+    </div>
+    <div class="list-group">
+        <div class="col-md-12">
+            <div class="col-md-6 act-img-ser">
+                <div class="img" id="segu1">
+
+                </div>
+                <div class="enl-se">
+                    <h1><a href="{{ path('ud_seguridad_invitados') }}">Invitados</a></h1>
+                </div>
+            </div>
+
+            <div class="col-md-6 act-img-ser">
+                <div class="img" id="segu2">
+
+                </div>
+                <div class="enl-se">
+                    <h1><a href="#">XXXXXXX</a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

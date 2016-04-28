@@ -8,15 +8,15 @@ class __TwigTemplate_9f84707db40101dafc8b5b6aac99c97d634e6ba09921580c377b6710c36
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "DeportesBundle:InventarioDeportes:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Deportes/Default/index.html.twig", "DeportesBundle:InventarioDeportes:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Deportes/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,11 @@ class __TwigTemplate_9f84707db40101dafc8b5b6aac99c97d634e6ba09921580c377b6710c36
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div class=\"container\">
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         <div class=\"col-md-12\">
             <div class=\"page-header\">
                 <h1>Lista de inventario</h1>
@@ -115,7 +116,6 @@ class __TwigTemplate_9f84707db40101dafc8b5b6aac99c97d634e6ba09921580c377b6710c36
                 Nuevo Elemento
             </a>
         </div>
-    </div>
 ";
     }
 
@@ -131,13 +131,13 @@ class __TwigTemplate_9f84707db40101dafc8b5b6aac99c97d634e6ba09921580c377b6710c36
 
     public function getDebugInfo()
     {
-        return array (  113 => 43,  108 => 40,  98 => 36,  93 => 34,  88 => 32,  83 => 30,  78 => 28,  74 => 27,  70 => 26,  64 => 25,  58 => 24,  55 => 23,  51 => 22,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  114 => 43,  109 => 40,  99 => 36,  94 => 34,  89 => 32,  84 => 30,  79 => 28,  75 => 27,  71 => 26,  65 => 25,  59 => 24,  56 => 23,  52 => 22,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Deportes/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
-/*     <div class="container">*/
+/* {% block content -%}*/
+/*     {{ parent() }}*/
 /*         <div class="col-md-12">*/
 /*             <div class="page-header">*/
 /*                 <h1>Lista de inventario</h1>*/
@@ -180,6 +180,5 @@ class __TwigTemplate_9f84707db40101dafc8b5b6aac99c97d634e6ba09921580c377b6710c36
 /*                 Nuevo Elemento*/
 /*             </a>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
 /* */

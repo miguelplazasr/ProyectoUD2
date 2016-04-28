@@ -8,15 +8,15 @@ class __TwigTemplate_5ef4c48fa6f850021614a52874ba6010f3ce894365eb57a3c53d659bc79
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "AdminBundle:Dependencia:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Admin/Default/index.html.twig", "AdminBundle:Dependencia:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Admin/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_5ef4c48fa6f850021614a52874ba6010f3ce894365eb57a3c53d659bc79
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container well\">
+    <div class=\"row well\">
         <div class=\"col-lg-9\">
             <h1>Dependencia: ";
         // line 7
@@ -107,11 +107,11 @@ class __TwigTemplate_5ef4c48fa6f850021614a52874ba6010f3ce894365eb57a3c53d659bc79
         return array (  87 => 39,  82 => 37,  74 => 32,  66 => 27,  54 => 18,  45 => 12,  37 => 7,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends ('@Admin/Default/index.html.twig') %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container well">*/
+/*     <div class="row well">*/
 /*         <div class="col-lg-9">*/
 /*             <h1>Dependencia: {{ entity.nombre }}</h1>*/
 /*             <br>*/

@@ -1,7 +1,7 @@
-{% extends ('layout.html.twig') %}
+{% extends ('@Admin/Default/index.html.twig') %}
 
-{% block body -%}
-    <div class="container">
+{% block content -%}
+    {{ parent() }}
         <div class="col-md-12">
             <div class="page-header">
                 <h1>Listado de Dependencias</h1>
@@ -38,6 +38,5 @@
                 Nueva Dependencia
             </a>
         </div>
-    </div>
 {% endblock %}
 

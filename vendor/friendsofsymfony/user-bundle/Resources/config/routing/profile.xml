@@ -16,6 +16,14 @@
         <default key="_controller">FOSUserBundle:Profile:index</default>
     </route>
 
+    <route id="fos_user_profile_newus" path="/new" methods="GET">
+        <default key="_controller">FOSUserBundle:Profile:newUs</default>
+    </route>
+
+    <route id="fos_user_profile_createus" path="/create" methods="POST">
+        <default key="_controller">FOSUserBundle:Profile:createUs</default>
+    </route>
+
     <route id="fos_user_profile_showus" path="/show/{id}" methods="GET">
         <default key="_controller">FOSUserBundle:Profile:showUs</default>
     </route>

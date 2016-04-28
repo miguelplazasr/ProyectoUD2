@@ -17,6 +17,7 @@ use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Model\UserInterface;
 use Proyecto\AdminBundle\Entity\Usuarios;
+use Proyecto\AdminBundle\Form\RegistrationType;
 use Proyecto\AdminBundle\Form\UsuariosType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +50,63 @@ class ProfileController extends Controller
               'delete_forms' => $deleteForms
         ));
 
+    }
+
+    /**
+     * Creates a new Usuarios entity.
+     *
+     * @Route("/", name="fos_user_profile_createus")
+     * @Method("POST")
+     * @Template("FOSUserBundle:Profile:newus.html.twig")
+     */
+    public function createUsAction(Request $request){
+        $user = new Usuarios();
+        $form = $this->createCreateForm($user);
+        $form->handleRequest($request);
+
+        if($form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($user);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('fos_user_profile_showus', array('id' => $user->getId())));
+        }
+
+        return array(
+            'user' => $user,
+            'form' => $form->createView()
+        );
+    }
+
+
+    private function createCreateForm(Usuarios $user)
+    {
+        $form = $this->createForm(new RegistrationType(), $user, array(
+            'action' => $this->generateUrl('fos_user_profile_createus'),
+            'method' => 'POST',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Create'));
+
+        return $form;
+    }
+
+    /**
+     * Displays a form to create a new Usuarios entity.
+     *
+     * @Route("/new", name="fos_user_profile_newus")
+     * @Method("GET")
+     * @Template()
+     */
+    public function newUsAction(){
+        $user = new Usuarios();
+        $form = $this->createCreateForm($user);
+
+        return array(
+            'user' => $user,
+            'form' => $form->createView()
+        );
     }
 
     public function showUsAction($id){
@@ -231,6 +289,7 @@ class ProfileController extends Controller
             'form' => $form->createView()
         ));
     }
+
 
 
 }

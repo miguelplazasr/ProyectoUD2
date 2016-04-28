@@ -1,5 +1,5 @@
 activos_homepage:
-    path:     /hellok/{name}
+    path:     /ud/activos/inicio
     defaults: { _controller: ActivosBundle:Default:index }
 
 #elementos

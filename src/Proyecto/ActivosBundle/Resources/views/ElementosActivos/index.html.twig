@@ -1,8 +1,7 @@
-{% extends 'layout.html.twig' %}
+{% extends '@Activos/Default/index.html.twig' %}
 
-{% block body -%}
-    <div class="container">
-        <div class="col-md-12">
+{% block content -%}
+    {{ parent() }}
             <div class="page-header">
                 <h1>Lista de activos</h1>
             </div>
@@ -39,6 +38,4 @@
             <a href="{{ path('ud_activos_elementos_new') }}" class="btn btn-sm btn-default">
                 Nuevo Activo
             </a>
-        </div>
-    </div>
 {% endblock %}

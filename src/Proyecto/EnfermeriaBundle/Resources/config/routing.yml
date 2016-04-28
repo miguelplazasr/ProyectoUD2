@@ -1,6 +1,6 @@
 enfermeria_homepage:
-    path:     /enfermeria
-    defaults: { _controller: EnfermeriaBundle:Default:prueba }
+    path:     /ud/enfermeria/inicio
+    defaults: { _controller: EnfermeriaBundle:Default:index }
 
 #seguridadsocial
 

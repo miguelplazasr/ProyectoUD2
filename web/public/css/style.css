@@ -90,3 +90,747 @@ input#print {
 .imagen-inv {
     text-align: center;
 }
+
+.title-login {
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+img#udftc {
+    width: 100%;
+    max-width: 350px;
+    max-height: 310px;
+}
+
+.ud-img {
+    padding: 60px;
+}
+
+.tit-ini {
+    text-align: center;
+    background-color: red;
+    padding: 30px;
+    color: white;
+}
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+    }
+    .sidebar-nav .navbar ul:not {
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.blue {
+    background-color: #111182;
+}
+
+div#activos1 {
+    background-image: url(../../public/images/activos/activos1.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img:hover #activos1 {
+    background-image: url(../../public/images/activos/activos2.png);
+}
+
+.act-img {
+    border: 1px solid #111182;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.enl h1 {text-align: center;}
+
+.enl h1.hover {
+    text-decoration: none;
+}
+
+.act-img:hover {
+    border: 1px solid #71AEE2;
+    background-color: #BFBFDE;
+}
+
+.enl a {
+    color: #71AEE2;
+    transition: all 0.5s ease;
+}
+
+.act-img:hover a {
+    color: #111182;
+}
+
+div#activos2 {
+    background-image: url(../../public/images/activos/activos4.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img:hover #activos2 {
+    background-image: url(../../public/images/activos/activos3.png);
+}
+
+div#activos3 {
+    background-image: url(../../public/images/activos/activos5.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img:hover #activos3 {
+    background-image: url(../../public/images/activos/activos6.png);
+}
+
+div#activos4 {
+    background-image: url(../../public/images/activos/activos7.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img:hover #activos4 {
+    background-image: url(../../public/images/activos/activos8.png);
+}
+
+.yellow {
+    background-color: #898905;
+}
+
+.yellowa a {
+    background: #CBCB26 !important;
+}
+
+.yellowli a:hover {
+    background: #E5EE64 !important;
+    color: #898905 !important;
+}
+
+.yellowli a {
+    transition: all 0.5s ease;
+}
+
+.act-img-adm {
+    border: 1px solid #CBCB26;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* display: flex; */
+    transition: all 0.5s ease;
+}
+
+div#admin1 {
+    background: url(../../public/images/admin/admin1.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#admin2 {
+    background: url(../../public/images/admin/admin3.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#admin3 {
+    background: url(../../public/images/admin/admin5.png);
+    width: 200px;
+    height: 200px;
+}
+
+.act-img-adm:hover #admin1 {
+    background-image: url(../../public/images/admin/admin2.png);
+}
+
+.act-img-adm:hover #admin2 {
+    background-image: url(../../public/images/admin/admin4.png);
+}
+
+.act-img-adm:hover #admin3 {
+    background-image: url(../../public/images/admin/admin6.png);
+}
+
+.act-img-adm:hover {
+    background: #E6E67A;
+    border: 1px solid #CBCB26;
+}
+
+.enl-a a {
+    color: #CBCB26;
+    margin-left: 10px;
+}
+
+.enl-a {
+    text-align: center;
+}
+
+.act-img-adm:hover a {
+    color: #898905;
+}
+
+.greena a {
+    background: #0B890B !important;
+}
+
+.greenli a {
+    background: #88FF7A !important;
+    color: #0B890B !important;
+    transition: all 0.5s ease;
+}
+
+.greenli a:hover {
+    color: black !important;
+    background: #38DE8A !important;
+}
+
+.act-img-dep {
+    border: 1px solid #0b890b;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.act-img-dep:hover {
+    border: 1px solid #88FF7A;
+    background: #0b890b;
+}
+
+.act-img-enf {
+    /* display: flex; */
+    border: 1px solid #A91FFF;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+div#deportes1 {
+    background: url(../../public/images/deportes/deportes1.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#deportes2 {
+    background: url(../../public/images/deportes/deportes3.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#deportes3 {
+    background: url(../../public/images/deportes/deportes5.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.enl-p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+div#deportes4 {
+    background: url(../../public/images/deportes/deportes8.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img-dep:hover #deportes1 {
+    background: url(../../public/images/deportes/deportes2.png);
+}
+
+.act-img-dep:hover #deportes2 {
+    background: url(../../public/images/deportes/deportes4.png);
+}
+
+.act-img-dep:hover #deportes3 {
+    background: url(../../public/images/deportes/deportes6.png);
+}
+.act-img-dep:hover #deportes4 {
+    background: url(../../public/images/deportes/deportes7.png);
+}
+
+.enl-d a {
+    color: #0B890B;
+    margin-top: 10px;
+}
+
+.enl-d h1 {text-align: center;}
+
+.act-img-dep:hover a {
+    color: #88FF7A;
+}
+
+.violeta a {
+    background: #520383 !important;
+}
+
+li.violetli {
+    background: #A91FFF;
+    transition: all 0.5s ease;
+}
+
+li.violetli:hover a {
+    background: #E2B4FE !important;
+    color: #520383 !important;
+}
+
+li.violetli a {
+    transition: all 0.5s ease;
+}
+
+div#enfer1 {
+    background: url(../../public/images/enfermeria/enfermeria1.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#enfer2 {
+    background: url(../../public/images/enfermeria/enfermeria3.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+
+.act-img-enf:hover #enfer1 {
+    background: url(../../public/images/enfermeria/enfermeria2.png);
+}
+
+.act-img-enf:hover #enfer2 {
+    background: url(../../public/images/enfermeria/enfermeria4.png);
+}
+
+.act-img-enf:hover {
+    border: 1px solid #520383;
+    background: #E0B6FB;
+}
+
+.act-img-enf:hover a {
+    color: #A91FFF !important;
+}
+
+.enl-e a {
+    color: #520383;
+}
+
+.enl-e h1 {text-align: center;}
+
+.orangea a {
+    background: #FF660B !important;
+}
+
+li.orangeli a {
+    background: #FAA304;
+    transition: all 0.5s ease;
+}
+
+li.orangeli a:hover {
+    background: white !important;
+    color: #FF660B;
+}
+
+.act-img-sal {
+    border: 1px solid #FAA304;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.act-img-sal:hover {
+    border: 1px solid #FF660B;
+    background: #FAA304;
+}
+
+.act-img-car {
+    border: 1px solid #A80909;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+div#salon1 {
+    background: url(../../public/images/salones/salones1.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#salon2 {
+    background: url(../../public/images/salones/salones3.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img-sal:hover #salon1 {
+    background: url(../../public/images/salones/salones2.png);
+}
+
+.act-img-sal:hover #salon2 {
+    background: url(../../public/images/salones/salones4.png);
+}
+
+.enl-s a {
+    color: #FF660B;
+}
+
+.enl-s h1 {text-align: center;}
+
+.act-img-sal:hover a {
+    color: #fff !important;
+}
+
+li.active.reda a {
+    background: #A80909 !important;
+}
+
+li.redli a {
+    background: #EE6A6A;
+    transition: all 0.5s ease;
+}
+
+li.redli a:hover {
+    background: #DB1B1B !important;
+}
+
+div#carnet1 {
+    background: url(../../public/images/carnet/carnet1.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.act-img-car:hover #carnet1 {
+    background: url(../../public/images/carnet/carnet2.png);
+}
+
+.act-img-car:hover {
+    background: #FFA2A2;
+    border: 1px solid #A80909;
+}
+
+.enl-c a {
+    color: #A80909;
+}
+
+.act-img-car:hover a {
+    color: #EE6A6A;
+}
+
+.enl-c h1 {text-align: center;}
+
+.cia a {
+    background: #02A0B0 !important;
+}
+
+.navbar-header {
+    background: #02A0B0;
+}
+
+.cianli a {
+    background: #2AE4E4;
+    color: #02A0B0 !important;
+    transition: all 0.5s ease;
+}
+
+li.cianli:hover a {
+    color: #fff !important;
+    background: #13BDD8 !important;
+}
+
+.act-img-ser {
+    border: 1px solid #2AE4E4;
+    padding-top: 10px;
+    transition: all 0.5s ease;
+}
+
+div#segu1 {
+    background: url(../../public/images/seguridad/invitados1.png);
+    transition: all 0.5s ease;
+    width: 200px;
+    height: 200px;
+}
+
+div#segu2 {
+    background: url(../../public/images/seguridad/invitados3.png);
+    transition: all 0.5s ease;
+    width: 200px;
+    height: 200px;
+}
+
+.act-img-ser:hover #segu1{
+    background: url(../../public/images/seguridad/invitados2.png);
+}
+
+.act-img-ser:hover #segu2{
+    background: url(../../public/images/seguridad/invitados4.png);
+}
+
+.act-img-ser:hover {
+    background: #B5F5F5;
+}
+
+.act-img-ser:hover a {
+    color: #02A0B0;
+}
+
+.enl-se a {
+    color: #2AE4E4;
+}
+
+.enl-se h1 {text-align: center;}
+
+div#adm {
+    background: url(../../public/images/portada/administracion.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#act {
+    background: url(../../public/images/portada/activos.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#dep {
+    background: url(../../public/images/portada/deportes.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#enf {
+    background: url(../../public/images/portada/enfermeria.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#sal {
+    background: url(../../public/images/portada/salones.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#car {
+    background: url(../../public/images/portada/carnet.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+div#ser {
+    background: url(../../public/images/portada/seguridad.png);
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+.right {
+    float: right;
+    margin-left: 730px;
+}
+
+.bloque {
+    margin-bottom: 40px;
+    transition: all 0.5s ease;
+}
+
+
+.img2 {
+    /* text-align: center; */
+    margin: 0 auto;
+}
+
+.img {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.enl-p {
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.enl-p a {
+    color: #000;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.bloque:hover div#adm {
+    background: url(../../public/images/portada/administacion2.png);
+    border: 1px solid #CBCB26;
+}
+
+.bloque:hover #en-ad a{
+    color: #FFF;
+}
+
+.bloque:hover #en-ad {
+    background: #CBCB26;
+}
+
+.bloque:hover div#act{
+    background: url(../../public/images/portada/activos2.png);
+    border: 1px solid #111182;
+}
+
+
+.bloque:hover #en-ac a {
+    color: #fff;
+}
+
+.bloque:hover #en-ac {
+    background: #111182;
+}
+
+div#en-ac {
+    transition: all 0.5s ease;
+}
+
+.bloque:hover div#dep{
+    background: url(../../public/images/portada/deportes2.png);
+    border: 1px solid #0B890B;
+}
+
+.bloque:hover #en-de a {
+    color: #fff;
+}
+
+.bloque:hover #en-de {
+    background: #0B890B;
+}
+
+div#en-de {
+    transition: all 0.5s ease;
+}
+
+.bloque:hover div#ser{
+    background: url(../../public/images/portada/seguridad2.png);
+    border: 1px solid #02A0B0;
+}
+
+.bloque:hover #en-se a {
+    color: #fff;
+}
+
+.bloque:hover #en-se {
+    background: #02A0B0;
+}
+
+div#en-se {
+    transition: all 0.5s ease;
+}
+
+.bloque:hover div#car{
+    background: url(../../public/images/portada/carnet2.png);
+    border: 1px solid #A80909;
+}
+
+.bloque:hover #en-ca a {
+    color: #fff;
+}
+
+.bloque:hover #en-ca {
+    background: #A80909;
+}
+
+div#en-ca{
+    transition: all 0.5s ease;
+}
+
+.bloque:hover div#enf{
+    background: url(../../public/images/portada/enfermeria2.png);
+    border: 1px solid #520383;
+}
+
+.bloque:hover #en-ef a {
+    color: #fff;
+}
+
+.bloque:hover #en-ef {
+    background: #520383;
+}
+
+div#en-ef{
+    transition: all 0.5s ease;
+}
+
+.bloque:hover div#sal{
+    background: url(../../public/images/portada/salones2.png);
+    border: 1px solid #FF660B;
+}
+
+.bloque:hover #en-sa a {
+    color: #fff;
+}
+
+.bloque:hover #en-sa {
+    background: #FF660B;
+}
+
+div#en-sa{
+    transition: all 0.5s ease;
+}
+
+.red-nav {
+    background: #A80909;
+}
+
+.nav-yel {
+    background: #CBCB26;
+}
+
+.blue-nav {
+    background: #111182;
+}
+
+.org-nav {
+    background: #FF660B;
+}
+
+.vio-nav {
+    background: #520383;
+}
+
+.vio-nav .navbar-toggle {
+    border-color: #fff;
+}
+
+.vio-nav .icon-bar {
+    background: #fff !important;
+}
+
+.vio-nav .navbar-toggle:hover {
+    background: #A91FFF;
+}

@@ -8,15 +8,15 @@ class __TwigTemplate_c2af6ebccc0fc88b6dd6c691b3b279e5eaba5f93be5f5f7265c379396be
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "EnfermeriaBundle:SeguridadSocial:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Enfermeria/Default/index.html.twig", "EnfermeriaBundle:SeguridadSocial:new.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Enfermeria/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,89 +25,87 @@ class __TwigTemplate_c2af6ebccc0fc88b6dd6c691b3b279e5eaba5f93be5f5f7265c379396be
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"main container\">
         <div class=\"row well\">
             <div class=\"col-md-6\">
                 <div class=\"page-header\">
                     <h1>A&ntildeadir nueva entrada</h1>
                 </div>
                 ";
-        // line 11
+        // line 10
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form_start', array("attr" => array("id" => ((array_key_exists("id", $context)) ? (_twig_default_filter((isset($context["id"]) ? $context["id"] : null), "new-form")) : ("new-form")))));
         echo "
                 <div class=\"form-group\">
                     ";
-        // line 13
+        // line 12
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "id", array()), 'label');
         echo "
                     ";
-        // line 14
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "id", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite id")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 17
+        // line 16
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "eps", array()), 'label');
         echo "
                     ";
-        // line 18
+        // line 17
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "eps", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite eps")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 21
+        // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "rh", array()), 'label');
         echo "
                     ";
-        // line 22
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "rh", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite rh")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 25
+        // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "telefonoContacto", array()), 'label');
         echo "
                     ";
-        // line 26
+        // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "telefonoContacto", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Digite un numero de contacto")));
         echo "
                 </div>
                 <div class=\"form-group\">
                     ";
-        // line 29
+        // line 28
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "users", array()), 'label');
         echo "
                     ";
-        // line 30
+        // line 29
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "users", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
                 </div>
 
                 <p>";
-        // line 33
+        // line 32
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "submit", array()), 'widget', array("label" => "Agregar Entrada", "attr" => array("class" => "btn btn-success")));
         echo "</p>
                 ";
-        // line 34
+        // line 33
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form_end');
         echo "
                 <a href=\"";
-        // line 35
+        // line 34
         echo $this->env->getExtension('routing')->getPath("ud_enfermeria_reporte");
         echo "\" class=\"btn btn-sm btn-link\">
                     Volver
                 </a>
             </div>
         </div>
-    </div>
 ";
     }
 
@@ -123,14 +121,13 @@ class __TwigTemplate_c2af6ebccc0fc88b6dd6c691b3b279e5eaba5f93be5f5f7265c379396be
 
     public function getDebugInfo()
     {
-        return array (  104 => 35,  100 => 34,  96 => 33,  90 => 30,  86 => 29,  80 => 26,  76 => 25,  70 => 22,  66 => 21,  60 => 18,  56 => 17,  50 => 14,  46 => 13,  41 => 11,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  103 => 34,  99 => 33,  95 => 32,  89 => 29,  85 => 28,  79 => 25,  75 => 24,  69 => 21,  65 => 20,  59 => 17,  55 => 16,  49 => 13,  45 => 12,  40 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends '@Enfermeria/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="main container">*/
 /*         <div class="row well">*/
 /*             <div class="col-md-6">*/
 /*                 <div class="page-header">*/
@@ -165,5 +162,4 @@ class __TwigTemplate_c2af6ebccc0fc88b6dd6c691b3b279e5eaba5f93be5f5f7265c379396be
 /*                 </a>*/
 /*             </div>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/

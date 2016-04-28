@@ -1,15 +1,41 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-    <div class="container">
-        <div class="col-md-12">
-            <div class="page-header">
-                <h1>Lista de Grupos</h1>
-            </div>
-            <div class="table-responsive">
-                {% include "FOSUserBundle:Group:list_content.html.twig" %}
+<div class="row">
+    <div class="col-sm-3">
+        <div class="sidebar-nav">
+            <div class="navbar navbar-default yellow" role="navigation">
+                <div class="navbar-header nav-yel">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="visible-xs navbar-brand">Menu de administracion</span>
+                </div>
+                <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active yellowa"><a href="#">Menu</a></li>
+                        <li class="yellowli"><a href="{{ path('admin_homepage') }}">Inicio</a></li>
+                        <li class="yellowli"><a href="{{ path('fos_user_profile_index') }}">Usuarios</a> </li>
+                        <li class="yellowli"><a href="{{ path('fos_user_group_list') }}">Grupos</a></li>
+                        <li class="yellowli"><a href="{{ path('ud_admin_dependencia') }}">Dependencias</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <p><a href="{{ path('fos_user_group_new') }}" class="btn btn-sm btn-link">Nuevo grupo</a> </p>
     </div>
+    <div class="col-sm-9">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>Lista de Grupos</h1>
+                </div>
+                <div class="table-responsive">
+                    {% include "FOSUserBundle:Group:list_content.html.twig" %}
+                </div>
+            </div>
+            <p><a href="{{ path('fos_user_group_new') }}" class="btn btn-sm btn-link">Nuevo grupo</a> </p>
+    </div>
+</div>
 {% endblock fos_user_content %}

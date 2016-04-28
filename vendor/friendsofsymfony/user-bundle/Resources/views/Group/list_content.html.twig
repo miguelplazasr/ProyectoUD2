@@ -21,7 +21,7 @@
                     <td class="actions">
                         <a href="{{ path('fos_user_group_show', {'groupName': group.getName}) }}" class="btn btn-sm btn-primary">Mostrar</a>
                         <a href="{{ path('fos_user_group_edit', {'groupName': group.getName}) }}" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="{{ path('fos_user_group_delete',{'groupName': group.getName}) }}" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este prestamo?')">Eliminar</a>
+                        <a href="{{ path('fos_user_group_delete',{'groupName': group.getName}) }}" class="btn btn-sm btn-danger" onclick="return confirm('Esta seguro de borrar este grupo?')">Eliminar</a>
                     </td>
                 </tr>
             {% endfor %}

@@ -1,1 +1,34 @@
-Hello {{ name }}!
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default orange" role="navigation">
+                    <div class="navbar-header org-nav">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="visible-xs navbar-brand">Menu de Salones</span>
+                    </div>
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active orangea"><a href="#">Menu</a></li>
+                            <li class="orangeli"><a href="{{ path('salones_homepage') }}">Inicio</a></li>
+                            <li class="orangeli"><a href="{{ path('ud_salones_salon') }}">Salones</a> </li>
+                            <li class="orangeli"><a href="{{ path('ud_salones_prestamo') }}">Prestamo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

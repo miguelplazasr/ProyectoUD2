@@ -8,15 +8,15 @@ class __TwigTemplate_770cb6a4f1ddefb63d61c0a7f10c1e58963cceca41b5c29c8ddf94e0667
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "EnfermeriaBundle:ReporteEmergencia:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Enfermeria/Default/index.html.twig", "EnfermeriaBundle:ReporteEmergencia:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Enfermeria/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,11 @@ class __TwigTemplate_770cb6a4f1ddefb63d61c0a7f10c1e58963cceca41b5c29c8ddf94e0667
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        $this->displayParentBlock("body", $context, $blocks);
+        $this->displayParentBlock("content", $context, $blocks);
         echo "
-    <div class=\"container\">
         <div class=\"col-md-12\">
             <div class=\"page-header margin-none\">
                 <h1>Lista de reportes</h1>
@@ -47,31 +46,31 @@ class __TwigTemplate_770cb6a4f1ddefb63d61c0a7f10c1e58963cceca41b5c29c8ddf94e0667
                     </thead>
                     <tbody>
                     ";
-        // line 21
+        // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 22
+            // line 21
             echo "                        <tr data-id=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "\">
                             <td><a href=\"";
-            // line 23
+            // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_enfermeria_reporte_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                             <td>";
-            // line 24
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "detalle", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "users", array()), "id", array()), "html", null, true);
             echo "</td>
                             <td>
                                 <a href=\"";
-            // line 27
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ud_enfermeria_reporte_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-sm btn-info\">Mostrar</a>
                             </td>
@@ -81,18 +80,17 @@ class __TwigTemplate_770cb6a4f1ddefb63d61c0a7f10c1e58963cceca41b5c29c8ddf94e0667
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 30
         echo "                    </tbody>
                 </table>
             </div>
             <a href=\"";
-        // line 34
+        // line 33
         echo $this->env->getExtension('routing')->getPath("ud_enfermeria_reporte_new");
         echo "\" class=\"btn btn-sm btn-primary\">
                 Nuevo Reporte
             </a>
         </div>
-    </div>
 
 ";
     }
@@ -109,14 +107,13 @@ class __TwigTemplate_770cb6a4f1ddefb63d61c0a7f10c1e58963cceca41b5c29c8ddf94e0667
 
     public function getDebugInfo()
     {
-        return array (  90 => 34,  85 => 31,  75 => 27,  70 => 25,  66 => 24,  60 => 23,  55 => 22,  51 => 21,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  89 => 33,  84 => 30,  74 => 26,  69 => 24,  65 => 23,  59 => 22,  54 => 21,  50 => 20,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends '@Enfermeria/Default/index.html.twig'%}*/
 /* */
-/* {% block body -%}*/
+/* {% block content -%}*/
 /*     {{ parent() }}*/
-/*     <div class="container">*/
 /*         <div class="col-md-12">*/
 /*             <div class="page-header margin-none">*/
 /*                 <h1>Lista de reportes</h1>*/
@@ -149,6 +146,5 @@ class __TwigTemplate_770cb6a4f1ddefb63d61c0a7f10c1e58963cceca41b5c29c8ddf94e0667
 /*                 Nuevo Reporte*/
 /*             </a>*/
 /*         </div>*/
-/*     </div>*/
 /* */
 /* {% endblock %}*/

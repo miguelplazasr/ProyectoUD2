@@ -8,15 +8,15 @@ class __TwigTemplate_1cc7fb1666d323218ab66813d1913c2f1e908c5d5e8a6b9e2c69bf2e242
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "AdminBundle:Dependencia:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Admin/Default/index.html.twig", "AdminBundle:Dependencia:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Admin/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,11 @@ class __TwigTemplate_1cc7fb1666d323218ab66813d1913c2f1e908c5d5e8a6b9e2c69bf2e242
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div class=\"container\">
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         <div class=\"col-md-12\">
             <div class=\"page-header\">
                 <h1>Listado de Dependencias</h1>
@@ -98,7 +99,6 @@ class __TwigTemplate_1cc7fb1666d323218ab66813d1913c2f1e908c5d5e8a6b9e2c69bf2e242
                 Nueva Dependencia
             </a>
         </div>
-    </div>
 ";
     }
 
@@ -114,13 +114,13 @@ class __TwigTemplate_1cc7fb1666d323218ab66813d1913c2f1e908c5d5e8a6b9e2c69bf2e242
 
     public function getDebugInfo()
     {
-        return array (  96 => 37,  91 => 34,  81 => 30,  76 => 28,  71 => 26,  66 => 24,  61 => 22,  55 => 21,  52 => 20,  48 => 19,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  97 => 37,  92 => 34,  82 => 30,  77 => 28,  72 => 26,  67 => 24,  62 => 22,  56 => 21,  53 => 20,  49 => 19,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends ('layout.html.twig') %}*/
+/* {% extends ('@Admin/Default/index.html.twig') %}*/
 /* */
-/* {% block body -%}*/
-/*     <div class="container">*/
+/* {% block content -%}*/
+/*     {{ parent() }}*/
 /*         <div class="col-md-12">*/
 /*             <div class="page-header">*/
 /*                 <h1>Listado de Dependencias</h1>*/
@@ -157,7 +157,6 @@ class __TwigTemplate_1cc7fb1666d323218ab66813d1913c2f1e908c5d5e8a6b9e2c69bf2e242
 /*                 Nueva Dependencia*/
 /*             </a>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
 /* */
 /* */

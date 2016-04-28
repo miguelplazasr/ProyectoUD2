@@ -1,1 +1,35 @@
-Hello {{ name }}!
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default cian" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="visible-xs navbar-brand">Seguridad Menu</span>
+                    </div>
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active cia"><a href="#">Menu</a></li>
+                            <li class="cianli"><a href="{{ path('seguridad_homepage') }}">Inicio</a></li>
+                            <li class="cianli"><a href="{{ path('ud_seguridad_invitados') }}">Seguridad Social</a> </li>
+                            <li class="cianli"><a href="#">XXXXXXX</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

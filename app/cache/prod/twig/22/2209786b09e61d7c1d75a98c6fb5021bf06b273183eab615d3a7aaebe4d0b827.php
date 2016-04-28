@@ -8,15 +8,15 @@ class __TwigTemplate_184ef82b1e71e0c34c07972e7d26058c793ae6712720ae2be9edb5f54cb
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "ActivosBundle:StockActivo:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("@Activos/Default/index.html.twig", "ActivosBundle:StockActivo:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "layout.html.twig";
+        return "@Activos/Default/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,11 @@ class __TwigTemplate_184ef82b1e71e0c34c07972e7d26058c793ae6712720ae2be9edb5f54cb
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div class=\"container\">
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         <div class=\"col-md-12\">
             <div class=\"page-header\">
                 <h1>Stock de elementos</h1>
@@ -103,7 +104,6 @@ class __TwigTemplate_184ef82b1e71e0c34c07972e7d26058c793ae6712720ae2be9edb5f54cb
                 Nuevo Stock
             </a>
         </div>
-    </div>
 ";
     }
 
@@ -119,13 +119,13 @@ class __TwigTemplate_184ef82b1e71e0c34c07972e7d26058c793ae6712720ae2be9edb5f54cb
 
     public function getDebugInfo()
     {
-        return array (  101 => 39,  96 => 36,  86 => 32,  81 => 30,  76 => 28,  71 => 26,  66 => 24,  62 => 23,  56 => 22,  53 => 21,  49 => 20,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  102 => 39,  97 => 36,  87 => 32,  82 => 30,  77 => 28,  72 => 26,  67 => 24,  63 => 23,  57 => 22,  54 => 21,  50 => 20,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends 'layout.html.twig' %}*/
+/* {% extends '@Activos/Default/index.html.twig' %}*/
 /* */
-/* {% block body -%}*/
-/*     <div class="container">*/
+/* {% block content -%}*/
+/*     {{ parent() }}*/
 /*         <div class="col-md-12">*/
 /*             <div class="page-header">*/
 /*                 <h1>Stock de elementos</h1>*/
@@ -164,6 +164,5 @@ class __TwigTemplate_184ef82b1e71e0c34c07972e7d26058c793ae6712720ae2be9edb5f54cb
 /*                 Nuevo Stock*/
 /*             </a>*/
 /*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
 /* */
