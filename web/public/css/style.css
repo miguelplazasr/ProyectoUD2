@@ -834,3 +834,39 @@ div#en-sa{
 .vio-nav .navbar-toggle:hover {
     background: #A91FFF;
 }
+
+.vio-nav .navbar-toggle:focus {
+    background: #A91FFF;
+}
+
+.blue-nav .icon-bar {
+    background-color: #fff !important;
+}
+
+.blue-nav:hover .icon-bar {
+    background: #111182 !important;
+}
+
+.org-nav .navbar-toggle:focus {
+    background: #FFF;
+}
+
+.org-nav .icon-bar {
+    background: #FAA304 !important;
+}
+
+.red-nav:hover .navbar-toggle {
+    background: #FFA2A2 !important;
+}
+
+.red-nav:focus .navbar-toggle {
+    background: #FFA2A2 !important;
+}
+
+.red-nav .icon-bar {
+    background: #E62121 !important;
+}
+
+.gre-nav {
+    background: #0B890B;
+}

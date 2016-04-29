@@ -36,14 +36,14 @@ class __TwigTemplate_ead2459f3a7a771e1b2169b24b81c2e91de0457a4e04c76f055eb96dd18
         <div class=\"col-sm-3\">
             <div class=\"sidebar-nav\">
                 <div class=\"navbar navbar-default green\" role=\"navigation\">
-                    <div class=\"navbar-header\">
+                    <div class=\"navbar-header gre-nav\">
                         <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".sidebar-navbar-collapse\">
                             <span class=\"sr-only\">Toggle navigation</span>
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
                         </button>
-                        <span class=\"visible-xs navbar-brand\">Sidebar menu</span>
+                        <span class=\"visible-xs navbar-brand\">Menu Deportes</span>
                     </div>
                     <div class=\"navbar-collapse collapse sidebar-navbar-collapse\">
                         <ul class=\"nav navbar-nav\">
@@ -113,14 +113,14 @@ class __TwigTemplate_ead2459f3a7a771e1b2169b24b81c2e91de0457a4e04c76f055eb96dd18
 /*         <div class="col-sm-3">*/
 /*             <div class="sidebar-nav">*/
 /*                 <div class="navbar navbar-default green" role="navigation">*/
-/*                     <div class="navbar-header">*/
+/*                     <div class="navbar-header gre-nav">*/
 /*                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">*/
 /*                             <span class="sr-only">Toggle navigation</span>*/
 /*                             <span class="icon-bar"></span>*/
 /*                             <span class="icon-bar"></span>*/
 /*                             <span class="icon-bar"></span>*/
 /*                         </button>*/
-/*                         <span class="visible-xs navbar-brand">Sidebar menu</span>*/
+/*                         <span class="visible-xs navbar-brand">Menu Deportes</span>*/
 /*                     </div>*/
 /*                     <div class="navbar-collapse collapse sidebar-navbar-collapse">*/
 /*                         <ul class="nav navbar-nav">*/

@@ -5,9 +5,8 @@ parameters:
     database_name: acceso
     database_user: root
     database_password: null
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: pruebaproyecto20163@gmail.com
+    mailer_password: Proyecto20163
     secret: 9541c2f4139550e9c852bf353ef2c2dbfbba76f0
-    default_locale:  "%locale%"

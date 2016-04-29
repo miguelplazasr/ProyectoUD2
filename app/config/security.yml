@@ -30,7 +30,7 @@ security:
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/ud/inicio, role: ROLE_SUPER_ADMIN}
+        - { path: ^/ud/inicio, role: [ROLE_SUPER_ADMIN, ROLE_DEPOR, ROLE_CARNE, ROLE_ACTIV, ROLE_ENFER, ROLE_SALAS, ROLE_SEGUR]}
         - { path: ^/ud/admin/register/confirmed, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/ud/admin/resetting/*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/ud/admin/profile/change-password, role: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -42,3 +42,4 @@ security:
         - { path: ^/ud/activos/*, role: ROLE_ACTIV }
         - { path: ^/ud/enfermeria/*, roles: ROLE_ENFER }
         - { path: ^/ud/salones/*, role: ROLE_SALAS }
+        - { path: ^/ud/seguridad/*, role: ROLE_SEGUR }
